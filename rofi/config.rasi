@@ -1,0 +1,89 @@
+configuration{
+    modi:                   "drun,calc,emoji";
+    font:                   "Jetbrains mono 9";
+    drun-display-format:    "{name}";
+    disable-history:        false;
+    hide-scrollbar:         true;
+    display-drun:           "Search";
+}
+
+@theme "catppuccin"
+
+element-text, element-icon , mode-switcher {
+    background-color: inherit;
+    text-color:       inherit;
+}
+
+window {
+    border:             2px;
+    border-color:       #20A877;
+    background-color:   #1b2224d9;
+}
+
+inputbar {
+    children: [prompt,entry];
+    background-color: #1b222400;
+    border-radius: 0;
+    padding: 0px;
+}
+
+prompt {
+    background-color: #F49861;
+    padding: 3px 6px 3px 6px ;
+    text-color: #141a1b;
+    margin: 5px 0 0px 5px;
+}
+
+textbox-prompt-colon {
+    expand: false;
+    str: ":";
+}
+
+mainbox {
+    margin: 0;
+    paddin: 0;
+    background-color: #00000000;
+}
+
+entry {
+    padding: 3px 5px 3px 5px;
+    margin: 5px 5px 0px 3px;
+    text-color: @fg-col;
+    background-color: #ffffff0f;
+}
+
+listview {
+    lines: 8;
+    paddin: 0px;
+    margin: 3px 5px 5px 5px;
+    columns: 1;
+    background-color: #00000000;
+}
+
+element {
+    padding: 3px 6px 4px 6px;
+    background-color: #00000000;
+    text-color: #e9eaea ;
+}
+
+element selected {
+    border-color: #20A877f0;
+    background-color: #2eb398;
+    text-color: #141a1b;
+}
+
+message {
+    border: 1px;
+    border-color: #20A877;
+    background-color: #ffffff0f;
+    text-color: #e9eaea;
+    margin: 3px 5px 0px 5px;
+    padding: 0 0 2px 0;
+}
+
+textbox {
+    background-color: #00000000;
+    margin: 3px 5px 0px 5px;
+    text-color: #e9eaea;
+    padding: 0 0 2px 0;
+}

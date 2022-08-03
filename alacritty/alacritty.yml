@@ -1,0 +1,86 @@
+env:
+  # This value is used to set the `$TERM` environment variable for
+  # each instance of Alacritty. If it is not present, alacritty will
+  # check the local terminfo database and use `alacritty` if it is
+  # available, otherwise `xterm-256color` is used.
+  TERM: xterm-256color
+
+window:
+  # Spread additional padding evenly around the terminal content.
+  padding:
+    x: 4
+    y: 3
+  # Dimensions if not SimpleFullscreen
+  dimensions:
+    columns: 85
+    lines: 23
+
+cursor:
+  # Block Underline or Beam
+  style:
+    shape: Block
+    blinking: On
+  blink_interval: 350
+
+font:
+  normal:
+    # Needs to be powerline font if using zsh theme with powerline
+    family: Jetbrains mono #Inconsolata
+  # Font size
+  size: 8.5
+
+  # Better font rendering for mac
+  use_thin_strokes: true
+
+  offset:
+      x: 0    # For letter spacing.
+      y: -1   # For line spacing. 
+
+# Colors (Hyper)
+colors:
+  # Default colors
+  primary:
+    background: '#222b2e'
+    foreground: '#e5e9f0'
+  cursor:
+    text: '#000000'
+    cursor: '#ff9966'
+
+  # Normal colors
+  normal:
+    black:   '#1b2224'
+    red:     '#ff595e'
+    green:   '#06D68B'
+    yellow:  '#ffd166'
+    blue:    '#42a5f5'
+    magenta: '#9b5de5'
+    cyan:    '#00f5d4'
+    white:   '#eceff4'
+
+  # Bright colors
+  bright:
+    black:   '#124559'
+    red:     '#ff595e'
+    green:   '#06D68B'
+    yellow:  '#ffd166'
+    blue:    '#42a5f5'
+    magenta: '#9b5de5'
+    cyan:    '#00f5d4'
+    white:   '#eceff4'
+    
+selection:
+  # This string contains all characters that are used as separators for
+  # "semantic words" in Alacritty.
+  semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
+
+  # When true, selected text will be copied to the primary clipboard
+  save_to_clipboard: true
+
+# Login shell with arguments
+shell:
+  program: /bin/zsh
+  args:
+    - --login
+
+# Startup directory, unset or None for home directory
+working_directory: None
