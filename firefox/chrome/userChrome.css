@@ -1,0 +1,255 @@
+/*
+    by-
+    ╔═══════════════════════════════════════╗
+    ║  ┌──────┐ ┌─┐  ┌─┐ ┌──────┐ ┌─┐  ┌─┐  ║
+    ║  │ ┌──┐ │ │ \\ │ │ │ ┌──┐ │ │ └──┘ │  ║
+    ║  │ ╞══╡ │ │ │\\│ │ │ ╞══╡ │ └─┐  ┌─┘  ║
+    ║  │ │  │ │ │ │ \│ │ │ │  │ │   │  │    ║
+    ║  └─┘  └─┘ └─┘  └─┘ └─┘  └─┘   └──┘    ║
+    ╚═══════════════════════════════════════╝
+
+    firefox css config
+    inspired by : compact-fox & flying-fox
+
+*/
+
+/* ------------------ for compact mode ------------------ */
+
+/* adjustments for tabs thumbs */
+* {
+    font-family: "FreeSans";
+    font-size: 13.5px;
+}
+
+#tabbrowser-tabs {
+    height: 25px !important;
+    margin-left: 0px !important;
+}
+
+/* global height adjustment */
+:root {
+    --tab-min-height: 25px !important;
+    --tab-max-height: 25px !important;
+}
+
+/* tab close button(little cross in right of tabs) adjustment */
+.tab-close-button {
+    height: 16px !important;
+    padding: 2px !important;
+    width: 16px !important;
+}
+
+/* tabs+menubar background height */
+#TabsToolbar-customization-target {
+    height: 30px !important;
+}
+
+/* tabs elements adjustments */
+.tab-throbber-tabslist,
+.tab-throbber,
+.tab-icon-pending,
+.tab-icon-image,
+.tab-sharing-icon-overlay,
+.tab-icon-overlay {
+    height: 15px !important;
+    width: 15px !important;
+} 
+
+/* color customisation of different ui elements */
+.tab-background:-moz-lwtheme-brighttext {
+    background-color: rgba(66, 65, 76, 0.4) !important;
+}
+
+.tabbrowser-tab:-moz-lwtheme-brighttext:hover > .tab-stack > .tab-background {
+    background-color: rgba(66, 65, 76, 0.7) !important;
+}
+
+.tab-background {
+    background-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+.tabbrowser-tab:hover > .tab-stack > .tab-background {
+    background-color: rgba(0, 0, 0, 0.2) !important;
+}
+
+/* url text input box adjustments */
+#urlbar-input {
+    height: 15px !important;
+}
+
+/* urlbar background(not visible) */
+#urlbar {
+    min-height: 23px !important;
+}
+
+/* little url bar backgorund that acts as border */
+#urlbar-input-container {
+    border: none !important;
+}
+
+
+/* minor tweaks */
+#nav-bar > .toolbarbutton-1 {
+    padding: 0px !important;
+}
+
+.urlbar-page-action {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+}
+
+/* notification popup anchor adjustments */
+.notification-anchor-icon {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+}
+
+/* bookmarks thumb adjustments */
+.bookmark-item {
+    padding: 4px 6px !important;
+    margin-inline-start: 3px !important;
+    margin-top: 0 !important;
+    margin-bottom: 3px !important;
+    border-radius: 4px !important;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* ------------------ end of compact mode ------------------ */
+
+
+/* Remove left space of toolbar  */
+.titlebar-spacer[type="pre-tabs"] {
+    width: 24px !important;
+}
+
+
+/* Customize window action buttons ( Close, Min, Max ) */
+.titlebar-button {
+    background-color: rgba(255, 255, 255, 0.06);
+    margin: 0 !important;
+    /* height: 8px !important; */
+    transform: scale(1);
+    margin-right: -2px !important;
+    border-radius: 4px !important;
+}
+
+
+/* Apply dimmed background for inactive tabs */
+.tabbrowser-tab:hover>.tab-stack>.tab-background:not([selected], [multiselected]) {
+    background-color: color-mix(in srgb, currentColor 12%, transparent);
+}
+.tabbrowser-tab>.tab-stack>.tab-background:not([selected], [multiselected]) {
+    background-color: color-mix(in srgb, currentColor 6%, transparent);
+}
+
+
+/* Make all tabs small except selected one */
+.tabbrowser-tab[fadein]:not([selected]):not([pinned]) {  
+    max-width: 100px !important;
+    min-width: 100px !important;
+    color: rgba(255, 255, 255, 0.6) !important;
+    margin-right: -2px !important;
+    transform: translateY(-2px);
+}
+
+
+/* Selected tabs width */
+.tabbrowser-tab[selected][fadein]:not([pinned]) {  
+    max-width: 180px !important;
+    min-width: 160px !important;
+    color: rgba(255, 255, 255, 0.8) !important;
+    margin-right: -2px !important;
+    transform: translateY(-2px);
+}
+
+
+/* Hide tab close button */
+#TabsToolbar .close-icon {
+    display: none !important;
+}
+
+
+/* Unhide close button when it is selected tab and not pinned */
+#TabsToolbar .tabbrowser-tab[selected=true]:not([pinned]) .close-icon {
+    display: -moz-box !important;
+}
+
+
+/* Show close button even when mouse hover on inactive tabs */
+#TabsToolbar .tabbrowser-tab:not([selected="true"]):not([pinned]):hover .close-icon{
+    display: -moz-box !important;
+}
+
+
+/* Reduce spacing between pinned and regular tabs */
+#tabbrowser-tabs[haspinnedtabs]:not([positionpinnedtabs]) > #tabbrowser-arrowscrollbox > .tabbrowser-tab[first-visible-unpinned-tab] { 
+    margin-inline-start: initial !important; 
+}
+
+
+/* Menu items border and padding */
+menupopup > menuitem,
+menupopup > menu {
+    border-radius: 4px !important;
+    margin-left: 4px !important;
+    margin-right: 4px !important;
+}
+
+
+/* context menu top left button padding */
+menugroup > menuitem:first-child {  
+    padding-left: 4px !important;
+}
+
+
+/* context menu top right button padding */
+menugroup > menuitem:last-child {  
+    padding-right: 4px !important;
+}
+
+
+/* context menu top buttons radius */
+menugroup > menuitem {
+    border-radius: 4px !important;
+}
+menugroup > menuitem > hbox > image {  
+    border-radius: 4px !important;
+}
+
+
+/* make tabs bar translucent */
+#main-window {
+    background: #222b2e8e !important;
+}
+
+#navigator-toolbox {
+    background-color: #222b2e8e !important;
+}
+
+/* adjust color of tabs to be bright */
+#TabsToolbar:-moz-lwtheme-darktext,
+.table-widget-empty-text:-moz-lwtheme-darktext
+{
+    -moz-appearance: -moz-mac-vibrant-titlebar-light !important;
+ }
+
+#TabsToolbar:-moz-lwtheme-brighttext,
+.table-widget-empty-text:-moz-lwtheme-brighttext
+{
+    -moz-appearance: -moz-mac-vibrant-titlebar-dark !important;
+ }
+
+.tabbrowser-tab[selected="true"] .tab-label:-moz-lwtheme-brighttext
+{
+    color:white !important;
+}
+
+.tabbrowser-tab .tab-label:-moz-lwtheme-brighttext
+{
+    color:rgba(255,255,255,0.7) !important;
+}
+
+.tabbrowser-tab[selected="true"] .tab-background:-moz-lwtheme-brighttext
+{
+    box-shadow: inset 0em -4em 0em var(--toolbar-bgcolor) !important;
+}
