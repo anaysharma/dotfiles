@@ -1,0 +1,20 @@
+/* Confirm Dialog */
+
+@import "colors.rasi"
+
+* {
+    background-color:       #222b2ee0;
+    text-color:             #ffffff;
+	font:				 	"Jetbrains mono 9;
+}
+
+window {
+    width:      			320px;
+    padding:    			25px;
+    location:               center;
+}
+
+entry {
+    expand: 				true;
+    text-color:				@ac;
+}
