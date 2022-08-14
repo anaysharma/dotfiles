@@ -11,17 +11,17 @@
     notification_limit = 0
     progress_bar = true
     progress_bar_height = 10
-    progress_bar_frame_width = 1
-    progress_bar_min_width = 150
-    progress_bar_max_width = 300
+    progress_bar_frame_width = 0
+    progress_bar_min_width = 130
+    progress_bar_max_width = 260
     indicate_hidden = yes
     transparency = 10
     separator_height = 2
     padding = 8
     horizontal_padding = 8
     text_icon_padding = 0
-    frame_width = 1
-    frame_color = "#2EB398"
+    frame_width = 0
+    # frame_color = "#2EB398"
     gap_size = 5
     separator_color = frame
     sort = yes
@@ -68,7 +68,7 @@
     # for e.g. small files or high-dpi screens. In case of conflict,
     # max_icon_size takes precedence over this.
     min_icon_size = 18
-    max_icon_size = 24
+    max_icon_size = 30
 
     # Paths to default icons (only neccesary when not using recursive icon lookup)
     icon_path = /usr/share/icons/:/usr/share/icons/gnome/16x16/devices/
@@ -121,20 +121,20 @@
     # Otherwise the "#" and following would be interpreted as a comment.
     background = "#222b2e"
     foreground = "#888888"
-    frame_color = "#538077"
-    timeout = 10
+    # frame_color = "#538077"
+    timeout = 5
     # Icon for notifications with low urgency, uncomment to enable
     #default_icon = /path/to/icon
 
 [urgency_normal]
     background = "#222b2e"
     foreground = "#ffffff"
-    timeout = 10
+    timeout = 8
     # Icon for notifications with normal urgency, uncomment to enable
     #default_icon = /path/to/icon
 
 [urgency_critical]
-    background = "#222b2e"
+    background = "#772b2e"
     foreground = "#ffffff"
     frame_color = "#FF7726"
     timeout = 0
