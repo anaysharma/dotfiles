@@ -27,3 +27,6 @@ Build them from source
 I yoinked this config from Archcraft's Forest theme and edited a bit, all credits to Archcraft's creator.
 to use it, backup your existing config, then copy /polybar folder's content in ```$HOME/.config/polybar``` directory, then run ```launch.sh```.
 
+
+## Note
+adjust font size according to your liking, i set them pretty small because of low res display.
