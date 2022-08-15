@@ -7,7 +7,7 @@ configuration{
     display-drun:           "Search";
 }
 
-@theme "catppuccin"
+@theme "colors"
 
 element-text, element-icon , mode-switcher {
     background-color: inherit;
