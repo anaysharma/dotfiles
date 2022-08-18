@@ -3,8 +3,8 @@
     ╔═══════════════════════════════════════╗
     ║  ┌──────┐ ┌─┐  ┌─┐ ┌──────┐ ┌─┐  ┌─┐  ║
     ║  │ ┌──┐ │ │ \\ │ │ │ ┌──┐ │ │ └──┘ │  ║
-    ║  │ ╞══╡ │ │ │\\│ │ │ ╞══╡ │ └─┐  ┌─┘  ║
-    ║  │ │  │ │ │ │ \│ │ │ │  │ │   │  │    ║
+    ║  │ └──┘ │ │ │\\│ │ │ └──┘ │ └─┐  ┌─┘  ║
+    ║  │ ┌──┐ │ │ │ \│ │ │ ┌──┐ │   │  │    ║
     ║  └─┘  └─┘ └─┘  └─┘ └─┘  └─┘   └──┘    ║
     ╚═══════════════════════════════════════╝
 
@@ -19,17 +19,22 @@
 * {
     font-family: "FreeSans";
     font-size: 13.5px;
+    /*border-radius: 3px !important;*/
+}
+
+:root {
+    --inline-tab-padding: 8px !important;
 }
 
 #tabbrowser-tabs {
-    height: 25px !important;
-    margin-left: 0px !important;
+    height: 24px !important;
+    margin-left: 0 !important;
 }
 
 /* global height adjustment */
 :root {
-    --tab-min-height: 25px !important;
-    --tab-max-height: 25px !important;
+    --tab-min-height: 24px !important;
+    --tab-max-height: 24px !important;
 }
 
 /* tab close button(little cross in right of tabs) adjustment */
@@ -41,7 +46,7 @@
 
 /* tabs+menubar background height */
 #TabsToolbar-customization-target {
-    height: 30px !important;
+    height: 29px !important;
 }
 
 /* tabs elements adjustments */
@@ -65,26 +70,37 @@
 }
 
 .tab-background {
-    background-color: rgba(0, 0, 0, 0.1) !important;
+    background-color: #ffffff10 !important;
 }
 
 .tabbrowser-tab:hover > .tab-stack > .tab-background {
-    background-color: rgba(0, 0, 0, 0.2) !important;
+    background-color: #ffffff1f !important;
 }
 
 /* url text input box adjustments */
 #urlbar-input {
-    height: 15px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    height: 18px !important;
 }
 
 /* urlbar background(not visible) */
 #urlbar {
-    min-height: 23px !important;
+    min-height: 24px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+#urlbar-container {
+    padding: 0 !important;
+    margin: 0 !important;
 }
 
 /* little url bar backgorund that acts as border */
 #urlbar-input-container {
     border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
 }
 
 
@@ -106,10 +122,10 @@
 
 /* bookmarks thumb adjustments */
 .bookmark-item {
-    padding: 4px 6px !important;
-    margin-inline-start: 3px !important;
-    margin-top: 0 !important;
-    margin-bottom: 3px !important;
+    padding: 4px 5px !important;
+    margin-inline-start: 1px !important;
+    margin-top: 1px !important;
+    margin-bottom: 2px !important;
     border-radius: 4px !important;
     background-color: rgba(255, 255, 255, 0.05);
 }
@@ -129,7 +145,7 @@
     margin: 0 !important;
     /* height: 8px !important; */
     transform: scale(1);
-    margin-right: -2px !important;
+    margin-right: -1px !important;
     border-radius: 4px !important;
 }
 
@@ -147,7 +163,7 @@
 .tabbrowser-tab[fadein]:not([selected]):not([pinned]) {  
     max-width: 100px !important;
     min-width: 100px !important;
-    color: rgba(255, 255, 255, 0.6) !important;
+    color: rgba(255, 255, 255, 0.7) !important;
     margin-right: -2px !important;
     transform: translateY(-2px);
 }
@@ -155,10 +171,10 @@
 
 /* Selected tabs width */
 .tabbrowser-tab[selected][fadein]:not([pinned]) {  
-    max-width: 180px !important;
+    max-width: 200px !important;
     min-width: 160px !important;
-    color: rgba(255, 255, 255, 0.8) !important;
-    margin-right: -2px !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+    margin-right: -1px !important;
     transform: translateY(-2px);
 }
 

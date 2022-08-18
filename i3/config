@@ -25,7 +25,7 @@
 
     # Borders
         # Also removes all title bars
-        for_window [class="^.*"] border pixel 2
+        for_window [class="^.*"] border pixel 0
 
         # Hide borders at the edge of the screen
         hide_edge_borders smart
@@ -53,9 +53,9 @@
             # urgent        #2f343a     #900000     #ffffff     #900000     #900000
             # placeholder       #000000 #0c0c0c     #ffffff     #000000         #0c0c0c
 
-        client.focused           #20A877 #20A877 #191F21 #20A877   #20A877
-        client.focused_inactive  #222b2e #222b2fe #c0caf5 #222b2e   #222b2e
-        client.unfocused         #222b2e #1B2224 #c0caf5 #1B2224   #1B2224
+        client.focused           #2EB398 #2EB398 #191F21 #2EB398   #2EB398
+        client.focused_inactive  #538077 #538077 #c0caf5 #538077   #538077
+        client.unfocused         #335550 #335550 #c0caf5 #335550   #335550
 
     # Gaps
         # gaps inner|outer|horizontal|vertical|top|right|bottom|left <amount>
@@ -65,8 +65,12 @@
         # To reduce or remove outer gaps, outer gaps can be set to a negative value.
         gaps inner 5
         gaps outer 0
+        gaps vertical 0
+        gaps horizontal 0
         gaps top 0
         gaps bottom 0
+        gaps left 0
+        gaps right 0
 
         # Hide gaps when there is only 1 window
         smart_gaps on
@@ -76,6 +80,7 @@
 ###         Menu for commands        ###
 
     # Program Launcher
+        # bindcode 133 --release exec "rofi -no-lazy-grab -show drun -modi drun"
         bindsym $mod+d exec rofi -no-lazy-grab -show drun -modi drun
 
     # Power menu
@@ -91,10 +96,10 @@
 #########    Key Bindindings   #########
 
     # change focus
-        bindsym $mod+j focus left
-        bindsym $mod+k focus down
-        bindsym $mod+l focus up
-        bindsym $mod+semicolon focus right
+        bindsym $mod+h focus left
+        bindsym $mod+j focus down
+        bindsym $mod+k focus up
+        bindsym $mod+l focus right
 
     # alternatively, you can use the cursor keys:
         bindsym $mod+Left focus left
@@ -103,10 +108,10 @@
         bindsym $mod+Right focus right
 
     # move focused window
-        bindsym $mod+Shift+j move left
-        bindsym $mod+Shift+k move down
-        bindsym $mod+Shift+l move up
-        bindsym $mod+Shift+semicolon move right
+        bindsym $mod+Shift+h move left
+        bindsym $mod+Shift+j move down
+        bindsym $mod+Shift+k move up
+        bindsym $mod+Shift+l move right
 
     # alternatively, you can use the cursor keys:
         bindsym $mod+Shift+Left move left
@@ -115,10 +120,10 @@
         bindsym $mod+Shift+Right move right
 
     # split in horizontal orientation
-        bindsym $mod+h split h
+        bindsym $mod+c split h
 
     # split in vertical orientation
-        bindsym $mod+v split v
+        bindsym $mod+r split v
 
     # enter fullscreen mode for the focused container
         bindsym $mod+f fullscreen toggle
@@ -138,7 +143,7 @@
         bindsym $mod+a focus parent
 
     # kill focused window
-        bindsym $mod+q kill
+        bindsym $mod+Shift+c kill
 
     # Start a terminal
         bindsym $mod+Return exec $term
@@ -147,7 +152,7 @@
         floating_modifier $mod
 
     # reload i3 config
-        bindsym $mod+Shift+c reload
+        #bindsym $mod+Shift+c reload
 
     # reload i3
         bindsym $mod+Shift+r restart
@@ -190,14 +195,14 @@
         bindsym $mod+t focus mode_toggle
 
     # Media keys
-        bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
-        bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
-        bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-        bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+        bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+        bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+        bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+        bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
     # Sreen brightness controls
-        bindsym XF86MonBrightnessUp exec --no-startup-id "brightnessctl s +10"
-        bindsym XF86MonBrightnessDown exec --no-startup-id "brightnessctl s 10-"
+        bindsym XF86MonBrightnessUp exec --no-startup-id "brightnessctl s +5"
+        bindsym XF86MonBrightnessDown exec --no-startup-id "brightnessctl s 5-"
 
 
     # fn calculator shortcut
@@ -215,10 +220,10 @@
 #########  Resizing Containers #########
 
     mode "resize" {
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 5 ppt
@@ -231,27 +236,11 @@
         bindsym Escape mode "default"
         bindsym $mod+r mode "default"
     }
-    bindsym $mod+r mode "resize"
+    bindsym $mod+m mode "resize"
 
-#########   Quiet mode  #########
+########### scratchpads ###########
 
-mode "quiet" {
-        # These bindings trigger as soon as you enter the resize mode
 
-        # Move a window in and out the quiet mode
-        bindsym q exec ~/.config/i3/quiet-cmd.py toggle ; mode "default"
-
-        # Resize the window in quiet mode
-        bindsym s exec ~/.config/i3/quiet-cmd.py resize small
-        bindsym m exec ~/.config/i3/quiet-cmd.py resize medium
-        bindsym l exec ~/.config/i3/quiet-cmd.py resize large
-
-        # back to normal
-        bindsym Escape mode "default"
-        bindsym Return mode "default"
-        bindsym Caps_Lock mode "default"
-        bindsym $mod+d mode "default"
-}
 
 #########   Window Properties  #########
 ###   Floating/Tiling / Workspaces   ###
@@ -262,22 +251,19 @@ mode "quiet" {
     # Assign programs to workspace
         # assign [class="<APP NAME>"] → number <WORKSPACE NO>
         assign [class="firefox"] → number 2
-        assign [class="sublime"] → number 3
-        # Some programs can be stubborn since they open a splash window before opening
-        for_window [class="Gimp-2.10"] move to workspace number 7
-        for_window [class="Gimp"] move to workspace number 7
+        assign [class="Subl"] → number 3
 
 
 #########   Launch Programs  #########
 ###        We need dis stuff       ###
-# Applets
-    exec --no-startup-id nm-applet &
+
+# wallpaper
+    exec_always --no-startup-id feh --bg-fill $HOME/Pictures/wallpapers/bg_17.jpg &
 
 # start initial programs
-    exec_always picom 
-    exec /usr/lib/polkit-1/polkitd --no-debug
-    exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-    exec rofi -show drun
-
-# Finally start polybar
-    exec_always polybar
+    exec_always --no-startup-id picom &
+    exec_always --no-startup-id bash ~/.config/polybar/launch.sh --forest &
+    exec --no-startup-id dunst -config ~/.config/dunst/dunstrc &
+    exec --no-startup-id /usr/lib/polkit-1/polkitd --no-debug &
+    exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+    exec --no-startup-id nm-applet &

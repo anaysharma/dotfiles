@@ -1,0 +1,255 @@
+// Documentation at https://www.sublimetext.com/docs/themes.html
+{
+	"variables":
+	{
+        "tabSelectedBorderBorder": "#E57C46"
+	},
+	"rules":
+	[
+		{
+            "class": "tabset_control",
+            "layer0.tint": "var(tabInactiveBackground)",
+            "layer0.opacity": 1,
+            "layer1.draw_center": false,
+            "layer1.inner_margin": [
+                0,
+                1,
+                1,
+                1
+            ],
+            "layer1.tint": "var(tabBorder)",
+            "layer1.opacity": 1,
+            "content_margin": [
+                0,
+                0,
+                8,
+                0
+            ],
+            "connector_height": 0,
+            "tint_index": 0,
+            "tab_overlap": 0,
+            "tab_width": 160,
+            "tab_height": 32,
+            "mouse_wheel_switch": false,
+            "tint_modifier": "var(tabInactiveBackground)"
+        },
+        {
+            "class": "status_bar",
+            "layer0.opacity": 1,
+            "layer0.tint": "var(statusBarBackground)",
+            "layer1.inner_margin": [
+                0,
+                1,
+                0,
+                0
+            ],
+            "layer1.opacity": 1,
+            "layer1.tint": "var(statusBarBorder)",
+            "content_margin": [
+                2,
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "class": "quick_panel",
+            "row_padding": [
+                10,
+                4
+            ],
+            "layer0.tint": [
+                "background",
+                1
+            ],
+            "layer0.opacity": 1
+        },
+        {
+            "class": "panel_control",
+            "layer0.tint": "var(panelControlBackground)",
+            "layer0.opacity": 1,
+            "layer1.draw_center": false,
+            "layer1.inner_margin": [
+                0,
+                1,
+                0,
+                1
+            ],
+            "layer1.tint": "var(panelControlBorder)",
+            "layer1.opacity": 1,
+            "content_margin": [
+                0,
+                0
+            ]
+        },
+        {
+            "class": "text_line_control",
+            "layer0.opacity": 1,
+            "layer0.inner_margin": [
+                2,
+                0
+            ],
+            "layer0.tint": "var(background)",
+            "layer1.tint": "var(inputBorder)",
+            "layer1.opacity": 1,
+            "layer1.inner_margin": 1,
+            "layer1.draw_center": false,
+            "content_margin": [
+                4,
+                4
+            ],
+            "color_scheme_tint": "var(background)"
+        },
+        {
+            "class": "panel_grid_control",
+            "inside_spacing": 0,
+            "outside_hspacing": 0,
+            "outside_vspacing": 0
+        },
+        {
+            "class": "button_control",
+            "content_margin": [
+                0,
+                0
+            ],
+            "min_size": [
+                80,
+                30
+            ],
+            "layer0.tint": "var(buttonBackground)",
+            "layer0.opacity": 1,
+            "layer0.inner_margin": [
+                0,
+                0
+            ],
+            "layer1.draw_center": false,
+            "layer1.inner_margin": 1,
+            "layer1.tint": "var(buttonBorder)",
+            "layer1.opacity": 1
+        },
+        {
+            "class": "icon_button_control",
+            "layer0.tint": "var(buttonBackground)",
+            "layer0.inner_margin": [
+                10,
+                60
+            ],
+            "layer0.opacity": 1,
+            "layer1.draw_center": false,
+            "layer1.inner_margin": [
+                0,
+                1,
+                0,
+                1
+            ],
+            "layer1.tint": "var(buttonBorder)",
+            "layer1.opacity": 1,
+            "content_margin": [
+                12,
+                8
+            ]
+        },
+        {
+            "class": "show_tabs_dropdown_button",
+            "layer0.texture": "GitHub Theme/textures/navigation/more.png",
+            "layer0.tint": "var(tabButtonForeground)",
+            "layer0.opacity": {
+                "target": 0.5,
+                "speed": 5,
+                "interpolation": "smoothstep"
+            },
+            "content_margin": [
+                0,
+                0
+            ]
+        },
+        {
+            "class": "scroll_tabs_left_button",
+            "layer0.texture": "GitHub Theme/textures/navigation/arrow-small-left.png",
+            "layer0.opacity": {
+                "target": 0.5,
+                "speed": 4,
+                "interpolation": "smoothstep"
+            },
+            "layer0.tint": "var(tabButtonForeground)",
+            "content_margin": [
+                0,
+                10
+            ]
+        },
+        {
+            "class": "scroll_tabs_right_button",
+            "layer0.texture": "GitHub Theme/textures/navigation/arrow-small-right.png",
+            "layer0.opacity": {
+                "target": 0.5,
+                "speed": 4,
+                "interpolation": "smoothstep"
+            },
+            "layer0.tint": "var(tabButtonForeground)",
+            "content_margin": [
+                0,
+                10
+            ]
+        },
+        {
+            "class": "sidebar_tree",
+            "row_padding": [
+                16,
+                3
+            ],
+            "indent": 10,
+            "indent_offset": 1,
+            "indent_top_level": false,
+            "dark_content": true,
+            "spacer_rows": false
+        },
+        {
+            "class": "tab_control",
+            "attributes": [
+                "selected"
+            ],
+            "layer1.tint": "var(tabActiveBackground)",
+            "layer2.inner_margin": [
+                0,
+                1,
+                1,
+                0
+            ],
+            "layer3.inner_margin": [
+                0,
+                2,
+                0,
+                0
+            ],
+            "layer3.tint": "var(tabSelectedBorderBorder)",
+            "tint_modifier": "var(tabActiveBackground)"
+        },
+        {
+            "class": "icon_folder",
+            "parents": [
+                {
+                    "class": "tree_row",
+                    "attributes": [
+                        "expanded"
+                    ]
+                }
+            ],
+            "layer0.texture": "GitHub Theme/textures/tree/folder-opened.png",
+            "layer0.tint": "var(sidebarFolderExpandedForeground)",
+            "content_margin": [
+                8,
+                8
+            ]
+        },
+        {
+            "class": "icon_folder_dup",
+            "layer0.texture": "GitHub Theme/textures/tree/folder-dup.png",
+            "layer0.tint": "var(sidebarFolderForeground)",
+            "content_margin": [
+                8,
+                8
+            ]
+        },
+	]
+}
+
