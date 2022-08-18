@@ -5,6 +5,9 @@ configuration{
     disable-history:        false;
     hide-scrollbar:         true;
     display-drun:           "FILTER";
+    hover-select:           true;
+    me-select-entry:        "";
+    me-accept-entry:        [ MousePrimary, MouseSecondary, MouseDPrimary ];
 }
 
 @theme "catppuccin"
@@ -17,7 +20,7 @@ element-text, element-icon , mode-switcher {
 window {
     border:             0px;
     border-color:       #2eb398;
-    background-color:   rgba(34, 43, 46, 0.86);
+    background-color:   rgba(34, 43, 46, 0.9);
 }
 
 inputbar {
@@ -57,13 +60,13 @@ listview {
     lines: 8;
     paddin: 0px;
     margin: 0;
-    columns: 1;
+    columns: 2;
     margin: 2px 0 4px 0;
     background-color: #00000000;
 }
 
 element {
-    padding: 7px 10px;
+    padding: 6px 10px;
     background-color: #00000000;
     text-color: #ffffff60 ;
 }

@@ -84,7 +84,7 @@
         bindsym $mod+d exec rofi -no-lazy-grab -show drun -modi drun
 
     # Power menu
-        bindsym $mod+Escape exec bash powermenu
+        bindcode 124 --release exec "~/.config/polybar/forest/scripts/powermenu.sh"
 
     # emoji picker
         bindsym $mod+o exec rofi -show emoji

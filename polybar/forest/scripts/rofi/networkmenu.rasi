@@ -1,123 +1,93 @@
-/*
- *
- * Author  : Aditya Shakya
- * Mail    : adi1090x@gmail.com
- * Github  : @adi1090x
- * Twitter : @adi1090x
- *
- */
-
-configuration {
-	font:							"Iosevka Nerd Font 10";
-    show-icons:                     true;
-	icon-theme: 					"Papirus";
-    display-drun: 					"";
-    drun-display-format:            "{name}";
-    disable-history:                false;
-    fullscreen:                     false;
-	hide-scrollbar: 				true;
-	sidebar-mode: 					false;
+configuration{
+    modi:                   "drun,calc,emoji";
+    font:                   "Jetbrains mono 10";
+    drun-display-format:    "{name}";
+    disable-history:        false;
+    hide-scrollbar:         true;
+    display-drun:           "FILTER";
+    hover-select:           true;
+    me-select-entry:        "";
+    me-accept-entry:        [ MousePrimary, MouseSecondary, MouseDPrimary ];
 }
 
-@import "colors.rasi"
+element-text, element-icon , mode-switcher {
+    background-color: inherit;
+    text-color:       inherit;
+}
 
 window {
-    transparency:                   "real";
-    background-color:               @bg;
-    text-color:                     @fg;
-	border:							0px 0px 0px 0px;
-	border-color:					@ac;
-    border-radius:                  0px;
-	width:							400px;
-    location:                       center;
-    x-offset:                       0;
-    y-offset:                       0;
-}
-
-prompt {
-    enabled: 						true;
-	padding: 						0px 0px 0px 10px;
-	background-color: 				@bga;
-	text-color: 					@fg;
-}
-
-textbox-prompt-colon {
-	padding: 						0px;
-	background-color: 				@bga;
-	text-color: 					@ac;
-	expand: false;
-	str: "";
-	font:							"feather 12";
-}
-
-entry {
-    background-color:               @al;
-    text-color:                     @fg;
-    placeholder-color:              @fg;
-    expand:                         true;
-    horizontal-align:               0;
-    placeholder:                    "Search...";
-	padding: 						0px 0px 0px 5px;
-    blink:                          true;
+    border:             0px;
+    border-color:       #2eb398;
+    background-color:   rgba(34, 43, 46, 0.9);
+    width:              400px;
 }
 
 inputbar {
-	children: 						[ textbox-prompt-colon, prompt ];
-    background-color:               @bga;
-    text-color:                     @fg;
-    expand:                         false;
-	border:							0px 0px 1px 0px;
-    border-radius:                  0px;
-	border-color:					@se;
-    margin:                         0px;
-    padding:                        10px;
+    children: [prompt,entry];
+    background-color: #1b222400;
+    border-radius: 0;
+    padding: 0px;
 }
 
-listview {
-    background-color:               @al;
-    padding:                        0px;
-    columns:                        1;
-    lines:                          8;
-    spacing:                        5px;
-    cycle:                          true;
-    dynamic:                        true;
-    layout:                         vertical;
+prompt {
+    background-color: #2eb398;
+    padding: 10px;
+    text-color: #141a1b;
+    margin: 0;
+}
+
+textbox-prompt-colon {
+    expand: false;
+    str: ":";
 }
 
 mainbox {
-    background-color:               @al;
-	border:							0px;
-    border-radius:                  0px;
-	border-color:					@ac;
-    children:                       [ inputbar, listview ];
-    spacing:                       	5px;
-    padding:                        5px;
+    margin: 0;
+    paddin: 0;
+    background-color: #00000000;
+}
+
+entry {
+    padding: 10px;
+    margin: 0;
+    margin: 0 0 0 -2px;
+    text-color: #ffffff;
+    background-color: #ffffff0f;
+}
+
+listview {
+    lines: 8;
+    paddin: 0px;
+    margin: 0;
+    columns: 1;
+    margin: 2px 0 4px 0;
+    background-color: #00000000;
 }
 
 element {
-    background-color:               @al;
-    text-color:                     @fg;
-    orientation:                    horizontal;
-    border-radius:                  0px;
-	padding: 						8px 8px 8px -15px;
-}
-
-element-icon {
-    size:                           24px;
-    border:                         0px;
-}
-
-element-text {
-    expand:                         true;
-    horizontal-align:               0;
-    vertical-align:                 0.5;
-    margin:                         0px 2.5px 0px 2.5px;
+    padding: 6px 10px;
+    background-color: #00000000;
+    text-color: #ffffff60 ;
 }
 
 element selected {
-    background-color:               @se;
-    text-color:                     @bg;
-	border:							0px 0px 0px 0px;
-    border-radius:                  0px;
-    border-color:                  	@ac;
+    border-color: #20A877f0;
+    /*background-color: #00000090;*/
+    text-color: #ffffff;
+}
+
+message {
+    border: 1px;
+    border-color: #20A877;
+    background-color: #ffffff0f;
+    text-color: #e9eaea;
+    margin: 3px 5px 0px 5px;
+    padding: 0 0 2px 0;
+}
+
+textbox {
+    background-color: #00000000;
+    margin: 3px 5px 0px 5px;
+    text-color: #e9eaea;
+    padding: 0 0 2px 0;
 }
