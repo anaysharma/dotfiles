@@ -16,12 +16,6 @@
 /* ------------------ for compact mode ------------------ */
 
 /* adjustments for tabs thumbs */
-* {
-    font-family: "FreeSans";
-    font-size: 13.5px;
-    /*border-radius: 3px !important;*/
-}
-
 :root {
     --inline-tab-padding: 8px !important;
 }
@@ -58,7 +52,7 @@
 .tab-icon-overlay {
     height: 15px !important;
     width: 15px !important;
-} 
+}
 
 /* color customisation of different ui elements */
 .tab-background:-moz-lwtheme-brighttext {
@@ -79,15 +73,15 @@
 
 /* url text input box adjustments */
 #urlbar-input {
-    padding: 0 !important;
-    margin: 0 !important;
-    height: 18px !important;
+    text-align: center !important;
+    margin: 0 20px 0 0!important;
+    height: 17px !important;
 }
 
 /* urlbar background(not visible) */
 #urlbar {
     min-height: 24px !important;
-    padding: 0 !important;
+    padding: 0 4px !important;
     margin: 0 !important;
 }
 
@@ -122,12 +116,17 @@
 
 /* bookmarks thumb adjustments */
 .bookmark-item {
-    padding: 4px 5px !important;
-    margin-inline-start: 1px !important;
+    padding: 4px 10px !important;
     margin-top: 1px !important;
     margin-bottom: 2px !important;
     border-radius: 4px !important;
-    background-color: rgba(255, 255, 255, 0.05);
+    color: rgba(255, 255, 255, 0.6) !important;
+   /* width: 100px !important;
+    background-color: rgba(255, 255, 255, 0.05)*/;
+}
+
+.bookmark-item > image.toolbarbutton-icon {
+    display: none !important;
 }
 
 /* ------------------ end of compact mode ------------------ */
@@ -160,7 +159,7 @@
 
 
 /* Make all tabs small except selected one */
-.tabbrowser-tab[fadein]:not([selected]):not([pinned]) {  
+.tabbrowser-tab[fadein]:not([selected]):not([pinned]) {
     max-width: 100px !important;
     min-width: 100px !important;
     color: rgba(255, 255, 255, 0.7) !important;
@@ -170,7 +169,7 @@
 
 
 /* Selected tabs width */
-.tabbrowser-tab[selected][fadein]:not([pinned]) {  
+.tabbrowser-tab[selected][fadein]:not([pinned]) {
     max-width: 200px !important;
     min-width: 160px !important;
     color: rgba(255, 255, 255, 0.9) !important;
@@ -198,8 +197,8 @@
 
 
 /* Reduce spacing between pinned and regular tabs */
-#tabbrowser-tabs[haspinnedtabs]:not([positionpinnedtabs]) > #tabbrowser-arrowscrollbox > .tabbrowser-tab[first-visible-unpinned-tab] { 
-    margin-inline-start: initial !important; 
+#tabbrowser-tabs[haspinnedtabs]:not([positionpinnedtabs]) > #tabbrowser-arrowscrollbox > .tabbrowser-tab[first-visible-unpinned-tab] {
+    margin-inline-start: initial !important;
 }
 
 
@@ -213,13 +212,13 @@ menupopup > menu {
 
 
 /* context menu top left button padding */
-menugroup > menuitem:first-child {  
+menugroup > menuitem:first-child {
     padding-left: 4px !important;
 }
 
 
 /* context menu top right button padding */
-menugroup > menuitem:last-child {  
+menugroup > menuitem:last-child {
     padding-right: 4px !important;
 }
 
@@ -228,7 +227,7 @@ menugroup > menuitem:last-child {
 menugroup > menuitem {
     border-radius: 4px !important;
 }
-menugroup > menuitem > hbox > image {  
+menugroup > menuitem > hbox > image {
     border-radius: 4px !important;
 }
 
@@ -268,4 +267,28 @@ menugroup > menuitem > hbox > image {
 .tabbrowser-tab[selected="true"] .tab-background:-moz-lwtheme-brighttext
 {
     box-shadow: inset 0em -4em 0em var(--toolbar-bgcolor) !important;
+}
+
+
+#identity-icon-label[value="Extension (Tabliss)"] {
+    display: none !important;
+}
+
+
+#identity-box {
+    margin: 0 !important;
+}
+
+#identity-icon-box {
+    padding: 0 1px !important;
+}
+
+
+#PlacesToolbarItems,
+#PersonalToolbar,
+#personal-bookmarks {
+    display: flex !important;
+    justify-items: center !important;
+    margin: 0 auto !important;
+    border: none !important;
 }

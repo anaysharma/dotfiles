@@ -5,7 +5,6 @@ configuration{
     disable-history:        false;
     hide-scrollbar:         true;
     display-drun:           "FILTER";
-    hover-select:           true;
     me-select-entry:        "";
     me-accept-entry:        [ MousePrimary, MouseSecondary, MouseDPrimary ];
 }
@@ -58,7 +57,7 @@ entry {
 
 listview {
     lines: 8;
-    paddin: 0px;
+    padding: 10px;
     margin: 0;
     columns: 2;
     margin: 2px 0 4px 0;
@@ -66,9 +65,9 @@ listview {
 }
 
 element {
-    padding: 6px 10px;
+    padding: 5px 10px;
     background-color: #00000000;
-    text-color: #ffffff60 ;
+    text-color: #ffffff70 ;
 }
 
 element selected {

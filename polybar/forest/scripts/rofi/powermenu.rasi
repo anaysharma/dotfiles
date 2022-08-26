@@ -18,8 +18,9 @@ element-text, element-icon , mode-switcher {
 window {
     border:             0px;
     border-color:       #2eb398;
-    background-color:   rgba(34, 43, 46, 0.9);
-    width:              400px;
+    background-color:   rgba(34, 43, 46, 0.2);
+    padding:            400px 460px;
+    width:              1400px;
 }
 
 inputbar {
@@ -52,20 +53,20 @@ entry {
     margin: 0;
     margin: 0 0 0 -2px;
     text-color: #ffffff;
-    background-color: #ffffff0f;
+    background-color: rgba(49, 58, 61, 0.8);
 }
 
 listview {
-    lines: 4;
-    paddin: 0px;
+    lines: 1;
+    padding: 6px 20px;
     margin: 0;
-    columns: 1;
-    margin: 2px 0 4px 0;
-    background-color: #00000000;
+    columns: 4;
+    margin: -2px 0 0 0;
+    background-color:   rgba(34, 43, 46, 0.8);
 }
 
 element {
-    padding: 6px 10px;
+    padding: 5px 10px;
     background-color: #00000000;
     text-color: #ffffff60 ;
 }
@@ -73,7 +74,7 @@ element {
 element selected {
     border-color: #20A877f0;
     /*background-color: #00000090;*/
-    text-color: #ffffff;
+    text-color: #ff5566;
 }
 
 message {

@@ -45,7 +45,7 @@
             # indicator: The color used to indicate where a new view will open. In a tiled container, this would paint the right border of the current view if a new view would be opened to the right.
             # child_border: The border around the view itself.
         # The default colors are:
-            # class             border  background      text    indicator       child_border                    
+            # class             border  background      text    indicator       child_border
             # background        n/a         #ffffff     n/a         n/a         n/a
             # focused       #4c7899     #285577     #ffffff     #2e9ef4     #285577
             # focused_inactive  #333333 #5f676a #ffffff #484e50     #5f676a
@@ -89,8 +89,15 @@
     # emoji picker
         bindsym $mod+o exec rofi -show emoji
 
-    # wifi wifimenu
-        bindsym $mod+Shift+w exec bash wifimenu
+    # browser
+        bindsym $mod+b exec firefox
+
+    # file manager
+        bindsym $mod+f exec nemo
+
+    # tdrop scratchpad
+        bindsym Ctrl+space exec "tdrop -w 898 -h 594 -x 234 -y 83 -a alacritty --class scratchpad,scratchpad --config-file ~/.config/i3/alacritty/alacritty.yml"
+        for_window [class="scratchpad"] floating enable
 
 
 #########    Key Bindindings   #########
@@ -126,7 +133,7 @@
         bindsym $mod+r split v
 
     # enter fullscreen mode for the focused container
-        bindsym $mod+f fullscreen toggle
+        bindsym $mod+Shift+f fullscreen toggle
 
     # change container layout (stacked, tabbed, toggle split)
         bindsym $mod+s layout stacking
@@ -157,12 +164,13 @@
     # reload i3
         bindsym $mod+Shift+r restart
 
-    # Exit i3 
+    # Exit i3
         bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
     #prev/next workspace. bind it to your mouse if you have a sticky keyboard
         bindsym $mod+Shift+o workspace prev_on_output
         bindsym $mod+Shift+p workspace next_on_output
+        bindsym Mod1+Tab workspace back_and_forth
 
     # Switch to workspace
         bindsym $mod+1 workspace number 1
@@ -206,24 +214,21 @@
 
 
     # fn calculator shortcut
-        bindsym XF86Calculator exec rofi -show calc
+        bindsym XF86Calculator exec galculator
 
     # Screenshot / share shortcuts
         bindsym Print exec "maim ~/Pictures/Screenshot-$(date -Iseconds | cut -d'+' -f1).png"
         bindsym Shift+Print exec "maim | xclip -selection clipboard -t image/png"
-        bindsym $mod+Shift+Print exec "maim -u -s -n -l -c 0.157,0.333,0.466,0.4 ~/Pictures/Screenshot-$(date -Iseconds | cut -d'+' -f1).png"
-        bindsym $mod+Print exec "maim -u -s -n -l -c 0.157,0.333,0.466,0.4 | xclip -selection clipboard -t image/png"
-        #bindsym Shift+Print exec ~/.files/i3/record-screen.sh byzanz
-        #bindsym Shift+Ctrl+Print exec ~/.files/i3/record-screen.sh gif
-        #bindsym Shift+$mod+Print exec ~/.files/i3/record-screen.sh ogv
+        bindsym $mod+Print exec "maim -u -s -n -l -c 0.157,0.333,0.466,0.1 ~/Pictures/Screenshot-$(date -Iseconds | cut -d'+' -f1).png"
+        bindsym $mod+Shift+Print exec "maim -u -s -n -l -c 0.157,0.333,0.466,0.1 | xclip -selection clipboard -t image/png"
 
 #########  Resizing Containers #########
 
     mode "resize" {
-        bindsym h resize shrink width 10 px or 10 ppt
-        bindsym j resize grow height 10 px or 10 ppt
-        bindsym k resize shrink height 10 px or 10 ppt
-        bindsym l resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 10 px or 5 ppt
+        bindsym j resize grow height 10 px or 5 ppt
+        bindsym k resize shrink height 10 px or 5 ppt
+        bindsym l resize grow width 10 px or 5 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 5 ppt
@@ -238,8 +243,19 @@
     }
     bindsym $mod+m mode "resize"
 
-########### scratchpads ###########
+# set floating (nontiling) for apps needing it
+for_window [class="Yad" instance="yad"] floating enable
+for_window [class="Galculator" instance="galculator"] floating enable
+for_window [class="Blueberry.py" instance="blueberry.py"] floating enable
 
+# set floating (nontiling) for special apps
+for_window [class="Xsane" instance="xsane"] floating enable
+for_window [class="Pavucontrol" instance="pavucontrol"] floating enable
+for_window [class="qt5ct" instance="qt5ct"] floating enable
+for_window [class="Blueberry.py" instance="blueberry.py"] floating enable
+for_window [class="Bluetooth-sendto" instance="bluetooth-sendto"] floating enable
+for_window [class="Pamac-manager"] floating enable
+for_window [window_role="About"] floating enable
 
 
 #########   Window Properties  #########
@@ -254,16 +270,21 @@
         assign [class="Subl"] → number 3
 
 
-#########   Launch Programs  #########
-###        We need dis stuff       ###
-
-# wallpaper
-    exec_always --no-startup-id feh --bg-fill $HOME/Pictures/wallpapers/bg_17.jpg &
-
 # start initial programs
+    # source locale settings
+    exec_always --no-startup-id unset LANG &
+    exec_always --no-startup-id source /etc/profile.d/locale.sh &
+    # polybar
+    exec_always --no-startup-id ~/.config/polybar/forest/launch.sh &
+    # wallpaper
+    exec --no-startup-id feh --bg-fill $HOME/Downloads/980248.jpg &
+    # compositor
     exec_always --no-startup-id picom &
-    exec_always --no-startup-id bash ~/.config/polybar/launch.sh --forest &
+    # notification daemon
     exec --no-startup-id dunst -config ~/.config/dunst/dunstrc &
+    # auth daemon
     exec --no-startup-id /usr/lib/polkit-1/polkitd --no-debug &
     exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+    # applets
     exec --no-startup-id nm-applet &
+
