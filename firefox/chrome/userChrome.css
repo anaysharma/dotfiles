@@ -1,5 +1,7 @@
+
 /*
-    by-
+
+    firefox css config, by-
     ╔═══════════════════════════════════════╗
     ║  ┌──────┐ ┌─┐  ┌─┐ ┌──────┐ ┌─┐  ┌─┐  ║
     ║  │ ┌──┐ │ │ \\ │ │ │ ┌──┐ │ │ └──┘ │  ║
@@ -8,287 +10,177 @@
     ║  └─┘  └─┘ └─┘  └─┘ └─┘  └─┘   └──┘    ║
     ╚═══════════════════════════════════════╝
 
-    firefox css config
-    inspired by : compact-fox & flying-fox
-
 */
 
-/* ------------------ for compact mode ------------------ */
-
-/* adjustments for tabs thumbs */
-:root {
-    --inline-tab-padding: 8px !important;
+* {
+    --lwt-tab-line-color        : #222b2e !important;
+    border-radius               : 0 !important;
 }
-
+:root {
+    --inline-tab-padding        : 8px !important;
+    --tab-min-height            : 24px !important;
+    --tab-max-height            : 24px !important;
+    --lwt-tab-line-color        : #222b2e !important;
+    --tabs-navbar-shadow-size   : 0 !important;
+    --tab-shadow-max-size       : 0 !important;
+    --toolbar-start-end-padding : 2px !important;
+}
 #tabbrowser-tabs {
-    height: 24px !important;
-    margin-left: 0 !important;
+    height              : 24px !important;
+    margin-left         : 450px !important;
 }
-
-/* global height adjustment */
-:root {
-    --tab-min-height: 24px !important;
-    --tab-max-height: 24px !important;
-}
-
-/* tab close button(little cross in right of tabs) adjustment */
 .tab-close-button {
-    height: 16px !important;
-    padding: 2px !important;
-    width: 16px !important;
+    height              : 16px !important;
+    padding             : 2px !important;
+    width               : 16px !important;
 }
-
-/* tabs+menubar background height */
-#TabsToolbar-customization-target {
-    height: 29px !important;
-}
-
-/* tabs elements adjustments */
+#TabsToolbar-customization-target { height: 28px !important }
 .tab-throbber-tabslist,
 .tab-throbber,
 .tab-icon-pending,
 .tab-icon-image,
 .tab-sharing-icon-overlay,
 .tab-icon-overlay {
-    height: 15px !important;
-    width: 15px !important;
+    height              : 15px !important;
+    width               : 15px !important;
 }
-
-/* color customisation of different ui elements */
-.tab-background:-moz-lwtheme-brighttext {
-    background-color: rgba(66, 65, 76, 0.4) !important;
-}
-
-.tabbrowser-tab:-moz-lwtheme-brighttext:hover > .tab-stack > .tab-background {
-    background-color: rgba(66, 65, 76, 0.7) !important;
-}
-
+.tabbrowser-tab:hover > .tab-stack > .tab-background,
 .tab-background {
-    background-color: #ffffff10 !important;
+    background-color    : #00000000 !important;
+    margin              : 0 !important;
 }
-
-.tabbrowser-tab:hover > .tab-stack > .tab-background {
-    background-color: #ffffff1f !important;
-}
-
-/* url text input box adjustments */
-#urlbar-input {
-    text-align: center !important;
-    margin: 0 20px 0 0!important;
-    height: 17px !important;
-}
-
-/* urlbar background(not visible) */
+.tabbrowser-tab:hover > .tab-stack > .tab-background { padding: 0 !important }
+#urlbar-input { height  : 17px !important; }
 #urlbar {
-    min-height: 24px !important;
-    padding: 0 4px !important;
-    margin: 0 !important;
+    min-height          : 24px !important;
+    padding             : 0 4px !important;
+    margin              : 0 !important;
 }
-
+.notification-anchor-icon,
+.urlbar-page-action,
+#urlbar-input-container,
 #urlbar-container {
-    padding: 0 !important;
-    margin: 0 !important;
+    padding             : 0 !important;
+    margin              : 0 !important;
 }
-
-/* little url bar backgorund that acts as border */
-#urlbar-input-container {
-    border: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
-}
-
-
-/* minor tweaks */
-#nav-bar > .toolbarbutton-1 {
-    padding: 0px !important;
-}
-
-.urlbar-page-action {
-    padding-top: 0px !important;
-    padding-bottom: 0px !important;
-}
-
-/* notification popup anchor adjustments */
-.notification-anchor-icon {
-    padding-top: 0px !important;
-    padding-bottom: 0px !important;
-}
-
-/* bookmarks thumb adjustments */
+#nav-bar > .toolbarbutton-1 { padding: 0px !important }
 .bookmark-item {
-    padding: 4px 10px !important;
-    margin-top: 1px !important;
-    margin-bottom: 2px !important;
-    border-radius: 4px !important;
-    color: rgba(255, 255, 255, 0.6) !important;
-   /* width: 100px !important;
-    background-color: rgba(255, 255, 255, 0.05)*/;
+    padding             : 4px 10px !important;
+    margin-top          : 1px !important;
+    margin-bottom       : 2px !important;
+    color               : rgba(255, 255, 255, 0.6) !important;
 }
 
-.bookmark-item > image.toolbarbutton-icon {
-    display: none !important;
-}
-
-/* ------------------ end of compact mode ------------------ */
-
-
-/* Remove left space of toolbar  */
-.titlebar-spacer[type="pre-tabs"] {
-    width: 24px !important;
-}
-
-
-/* Customize window action buttons ( Close, Min, Max ) */
-.titlebar-button {
-    background-color: rgba(255, 255, 255, 0.06);
-    margin: 0 !important;
-    /* height: 8px !important; */
-    transform: scale(1);
-    margin-right: -1px !important;
-    border-radius: 4px !important;
-}
-
-
-/* Apply dimmed background for inactive tabs */
-.tabbrowser-tab:hover>.tab-stack>.tab-background:not([selected], [multiselected]) {
-    background-color: color-mix(in srgb, currentColor 12%, transparent);
-}
-.tabbrowser-tab>.tab-stack>.tab-background:not([selected], [multiselected]) {
-    background-color: color-mix(in srgb, currentColor 6%, transparent);
-}
-
-
-/* Make all tabs small except selected one */
+.bookmark-item > image.toolbarbutton-icon { display: none !important }
+.titlebar-spacer[type="pre-tabs"] { width: 0 !important }
+.tabbrowser-tab:hover>.tab-stack>.tab-background:not([selected], [multiselected]) { background-color: color-mix(in srgb, currentColor 12%, transparent) }
+.tabbrowser-tab>.tab-stack>.tab-background:not([selected], [multiselected]) { background-color: color-mix(in srgb, currentColor 6%, transparent) }
 .tabbrowser-tab[fadein]:not([selected]):not([pinned]) {
-    max-width: 100px !important;
-    min-width: 100px !important;
-    color: rgba(255, 255, 255, 0.7) !important;
-    margin-right: -2px !important;
-    transform: translateY(-2px);
+    max-width           : 100px !important;
+    min-width           : 100px !important;
+    color               : rgba(255, 255, 255, 0.7) !important;
+    margin-left         : -4px !important;
 }
-
-
-/* Selected tabs width */
 .tabbrowser-tab[selected][fadein]:not([pinned]) {
-    max-width: 200px !important;
-    min-width: 160px !important;
-    color: rgba(255, 255, 255, 0.9) !important;
-    margin-right: -1px !important;
-    transform: translateY(-2px);
+    max-width           : 200px !important;
+    min-width           : 160px !important;
+    color               : rgba(255, 255, 255, 0.9) !important;
+    margin-left         : -4px !important;
 }
-
-
-/* Hide tab close button */
-#TabsToolbar .close-icon {
-    display: none !important;
-}
-
-
-/* Unhide close button when it is selected tab and not pinned */
-#TabsToolbar .tabbrowser-tab[selected=true]:not([pinned]) .close-icon {
-    display: -moz-box !important;
-}
-
-
-/* Show close button even when mouse hover on inactive tabs */
-#TabsToolbar .tabbrowser-tab:not([selected="true"]):not([pinned]):hover .close-icon{
-    display: -moz-box !important;
-}
-
-
-/* Reduce spacing between pinned and regular tabs */
-#tabbrowser-tabs[haspinnedtabs]:not([positionpinnedtabs]) > #tabbrowser-arrowscrollbox > .tabbrowser-tab[first-visible-unpinned-tab] {
-    margin-inline-start: initial !important;
-}
-
-
-/* Menu items border and padding */
+#TabsToolbar .close-icon { display: none !important }
+#TabsToolbar .tabbrowser-tab[selected=true]:not([pinned]) .close-icon { display: -moz-box !important }
+#TabsToolbar .tabbrowser-tab:not([selected="true"]):not([pinned]):hover .close-icon{ display: -moz-box !important }
+#tabbrowser-tabs[haspinnedtabs]:not([positionpinnedtabs]) > #tabbrowser-arrowscrollbox > .tabbrowser-tab[first-visible-unpinned-tab] { margin-inline-start: initial !important }
 menupopup > menuitem,
 menupopup > menu {
-    border-radius: 4px !important;
-    margin-left: 4px !important;
-    margin-right: 4px !important;
+    border-radius       : 4px !important;
+    margin-left         : 4px !important;
+    margin-right        : 4px !important;
 }
-
-
-/* context menu top left button padding */
-menugroup > menuitem:first-child {
-    padding-left: 4px !important;
-}
-
-
-/* context menu top right button padding */
-menugroup > menuitem:last-child {
-    padding-right: 4px !important;
-}
-
-
-/* context menu top buttons radius */
-menugroup > menuitem {
-    border-radius: 4px !important;
-}
-menugroup > menuitem > hbox > image {
-    border-radius: 4px !important;
-}
-
-
-/* make tabs bar translucent */
-#main-window {
-    background: #222b2e8e !important;
-}
-
-#navigator-toolbox {
-    background-color: #222b2e8e !important;
-}
-
-/* adjust color of tabs to be bright */
-#TabsToolbar:-moz-lwtheme-darktext,
-.table-widget-empty-text:-moz-lwtheme-darktext
-{
-    -moz-appearance: -moz-mac-vibrant-titlebar-light !important;
- }
-
-#TabsToolbar:-moz-lwtheme-brighttext,
-.table-widget-empty-text:-moz-lwtheme-brighttext
-{
-    -moz-appearance: -moz-mac-vibrant-titlebar-dark !important;
- }
-
-.tabbrowser-tab[selected="true"] .tab-label:-moz-lwtheme-brighttext
-{
-    color:white !important;
-}
-
-.tabbrowser-tab .tab-label:-moz-lwtheme-brighttext
-{
-    color:rgba(255,255,255,0.7) !important;
-}
-
-.tabbrowser-tab[selected="true"] .tab-background:-moz-lwtheme-brighttext
-{
-    box-shadow: inset 0em -4em 0em var(--toolbar-bgcolor) !important;
-}
-
-
-#identity-icon-label[value="Extension (Tabliss)"] {
-    display: none !important;
-}
-
-
-#identity-box {
-    margin: 0 !important;
-}
-
-#identity-icon-box {
-    padding: 0 1px !important;
-}
-
-
+menugroup > menuitem:first-child { padding-left: 4px !important }
+menugroup > menuitem:last-child { padding-right: 4px !important }
+menugroup > menuitem { border-radius: 4px !important }
+menugroup > menuitem > hbox > image { border-radius: 4px !important }
+#main-window { background: #222b2ea0 !important }
+#navigator-toolbox { background-color: #222b2ea0 !important }
+#TabsToolbar:-moz-lwtheme-darktext,.table-widget-empty-text:-moz-lwtheme-darktext { -moz-appearance: -moz-mac-vibrant-titlebar-light !important }
+#TabsToolbar:-moz-lwtheme-brighttext,.table-widget-empty-text:-moz-lwtheme-brighttext { -moz-appearance: -moz-mac-vibrant-titlebar-dark !important }
+.tabbrowser-tab[selected="true"] .tab-label:-moz-lwtheme-brighttext { color:white !important }
+.tabbrowser-tab .tab-label:-moz-lwtheme-brighttext { color:rgba(255,255,255,0.7) !important }
+.tabbrowser-tab[selected="true"] .tab-background:-moz-lwtheme-brighttext { box-shadow: inset 0em -4em 0em var(--toolbar-bgcolor) !important }
+#identity-icon-label[value="Extension (Tabliss)"] { display: none !important }
+#identity-box { margin: 0 !important }
+#identity-icon-box { padding: 0 1px !important }
 #PlacesToolbarItems,
 #PersonalToolbar,
 #personal-bookmarks {
-    display: flex !important;
-    justify-items: center !important;
-    margin: 0 auto !important;
-    border: none !important;
+    display             : flex !important;
+    justify-items       : center !important;
+    margin              : 0 auto !important;
+    border              : none !important;
+}
+#fxa-avatar-image {	border-radius: 50% !important }
+.tab-content { --lwt-tab-line-color: #222b2e !important }
+#back-button[disabled="true"] { display: none !important }
+#forward-button[disabled="true"] { display: none !important }
+#tracking-protection-icon-container { display: none !important }
+#identity-box { display: none !important }
+#TabsToolbar { margin-left : var(--navbarWidth) !important }
+#nav-bar {
+    margin-right        : calc(100vw - 450px) !important;
+    background          : #1B2224 !important;
+    box-shadow          : none !important;
+    padding-inline-start: 2px !important;
+}
+#urlbar-container { min-width: 0px !important }
+:root[uidensity="compact"] #nav-bar { margin-top: -28px !important }
+:root:not([uidensity="compact"]):not([uidensity="touch"]) #nav-bar { margin-top: -44px !important }
+:root[uidensity="touch"] #nav-bar { margin-top: -49px !important }
+#navigator-toolbox { border: none !important }
+.titlebar-spacer { display: none !important }
+#urlbar-background { border: none !important }
+#urlbar:not(:hover):not([breakout][breakout-extend]) > #urlbar-background {
+    box-shadow          : none !important;
+    background          : none !important;
+}
+.urlbar-icon, #userContext-indicator, #userContext-label {
+    fill                : transparent !important;
+    background          : transparent !important;
+    color               : transparent !important;
+}
+#urlbar:hover .urlbar-icon,
+#urlbar:active .urlbar-icon,
+#urlbar[focused] .urlbar-icon {
+    fill                : var(--toolbar-color) !important;
+}
+.subviewbutton,
+#urlbar-background,
+.urlbar-icon,
+#userContext-indicator,
+#userContext-label,
+.urlbar-input-box,
+#identity-box,
+#tracking-protection-icon-container,
+[anonid=urlbar-go-button],
+.urlbar-icon-wrapper,
+#tracking-protection-icon,
+#identity-box image,
+stack,
+tab:not(:active) .tab-background,
+tab:not([beforeselected-visible])::after,
+tab[visuallyselected] .tab-background::before,
+tab[visuallyselected] .tab-background::before,
+.tab-close-button {
+    transition          : var(--animationSpeed) !important;
+}
+#PanelUI-menu-button,
+#back-button,
+toolbar .toolbarbutton-1 {
+    margin              : none !important;
+    padding             : none !important;
+}
+.tab-stack,
+.tab-background,
+.tab-content {
+    box-shadow          : none !important;
 }
