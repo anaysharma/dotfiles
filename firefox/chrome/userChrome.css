@@ -1,38 +1,38 @@
-
 /*
-
     firefox css config, by-
-    ╔═══════════════════════════════════════╗
-    ║  ┌──────┐ ┌─┐  ┌─┐ ┌──────┐ ┌─┐  ┌─┐  ║
-    ║  │ ┌──┐ │ │ \\ │ │ │ ┌──┐ │ │ └──┘ │  ║
-    ║  │ └──┘ │ │ │\\│ │ │ └──┘ │ └─┐  ┌─┘  ║
-    ║  │ ┌──┐ │ │ │ \│ │ │ ┌──┐ │   │  │    ║
-    ║  └─┘  └─┘ └─┘  └─┘ └─┘  └─┘   └──┘    ║
-    ╚═══════════════════════════════════════╝
 
+       ▄████████ ███▄▄▄▄      ▄████████ ▄██   ▄
+      ███    ███ ███▀▀▀██▄   ███    ███ ███   ██▄
+      ███    ███ ███   ███   ███    ███ ███▄▄▄███
+      ███    ███ ███   ███   ███    ███ ▀▀▀▀▀▀███
+    ▀███████████ ███   ███ ▀███████████ ▄██   ███
+      ███    ███ ███   ███   ███    ███ ███   ███
+      ███    ███ ███   ███   ███    ███ ███   ███
+      ███    █▀   ▀█   █▀    ███    █▀   ▀█████▀
 */
 
 * {
-    --lwt-tab-line-color        : #222b2e !important;
-    border-radius               : 0 !important;
+    --lwt-tab-line-color: #222b2e !important;
+    border-radius       : 0 !important;
 }
 :root {
-    --inline-tab-padding        : 8px !important;
-    --tab-min-height            : 24px !important;
-    --tab-max-height            : 24px !important;
-    --lwt-tab-line-color        : #222b2e !important;
-    --tabs-navbar-shadow-size   : 0 !important;
-    --tab-shadow-max-size       : 0 !important;
-    --toolbar-start-end-padding : 2px !important;
+    --inline-tab-padding            : 8px !important;
+    --tab-min-height                : 24px !important;
+    --tab-max-height                : 24px !important;
+    --lwt-tab-line-color            : #222b2e !important;
+    --tabs-navbar-shadow-size       : 0 !important;
+    --tab-shadow-max-size           : 0 !important;
+    --toolbar-start-end-padding     : 0 !important;
+    --toolbarbutton-outer-padding   : 0 !important;
 }
 #tabbrowser-tabs {
     height              : 24px !important;
     margin-left         : 450px !important;
 }
 .tab-close-button {
-    height              : 16px !important;
-    padding             : 2px !important;
-    width               : 16px !important;
+    height              : 22px !important;
+    padding             : 5px !important;
+    width               : 22px !important;
 }
 #TabsToolbar-customization-target { height: 28px !important }
 .tab-throbber-tabslist,
@@ -90,17 +90,9 @@
 #TabsToolbar .close-icon { display: none !important }
 #TabsToolbar .tabbrowser-tab[selected=true]:not([pinned]) .close-icon { display: -moz-box !important }
 #TabsToolbar .tabbrowser-tab:not([selected="true"]):not([pinned]):hover .close-icon{ display: -moz-box !important }
-#tabbrowser-tabs[haspinnedtabs]:not([positionpinnedtabs]) > #tabbrowser-arrowscrollbox > .tabbrowser-tab[first-visible-unpinned-tab] { margin-inline-start: initial !important }
-menupopup > menuitem,
-menupopup > menu {
-    border-radius       : 4px !important;
-    margin-left         : 4px !important;
-    margin-right        : 4px !important;
-}
-menugroup > menuitem:first-child { padding-left: 4px !important }
-menugroup > menuitem:last-child { padding-right: 4px !important }
-menugroup > menuitem { border-radius: 4px !important }
-menugroup > menuitem > hbox > image { border-radius: 4px !important }
+#tabbrowser-tabs[haspinnedtabs]:not([positionpinnedtabs])
+> #tabbrowser-arrowscrollbox
+> .tabbrowser-tab[first-visible-unpinned-tab] { margin-inline-start: initial !important }
 #main-window { background: #222b2ea0 !important }
 #navigator-toolbox { background-color: #222b2ea0 !important }
 #TabsToolbar:-moz-lwtheme-darktext,.table-widget-empty-text:-moz-lwtheme-darktext { -moz-appearance: -moz-mac-vibrant-titlebar-light !important }
@@ -120,7 +112,6 @@ menugroup > menuitem > hbox > image { border-radius: 4px !important }
     border              : none !important;
 }
 #fxa-avatar-image {	border-radius: 50% !important }
-.tab-content { --lwt-tab-line-color: #222b2e !important }
 #back-button[disabled="true"] { display: none !important }
 #forward-button[disabled="true"] { display: none !important }
 #tracking-protection-icon-container { display: none !important }
@@ -184,3 +175,10 @@ toolbar .toolbarbutton-1 {
 .tab-content {
     box-shadow          : none !important;
 }
+#appMenu-popup,
+#widget-overflow {
+    opacity             : 0.9 !important;
+}
+#appMenu-popup { transform: scale(1.03, 1.015) !important; }
+#widget-overflow { transform: scale(1.031) !important }
+#star-button-box { width: 10px !important }
