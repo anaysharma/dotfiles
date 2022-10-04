@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# Modify MPD's state file to ensure current state is "pause"
+sed -i 's/^\(state: \).*/\1pause/' /var/lib/mpd/mpdstate

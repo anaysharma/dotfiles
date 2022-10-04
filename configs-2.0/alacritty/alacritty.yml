@@ -1,0 +1,78 @@
+env:
+
+  TERM: xterm-256color
+
+window:
+
+  padding:
+    x: 6
+    y: 6
+
+  dimensions:
+    columns: 85
+    lines: 24
+
+  opacity: 1
+cursor:
+
+  style:
+    shape: Block
+    blinking: On
+
+  blink_interval: 350
+
+font:
+
+  normal:
+    family: Jetbrainsmono nerd font
+    weight: 800
+
+  size: 9
+
+  offset:
+    x: 0
+    y: 0
+
+colors:
+
+  primary:
+
+    background: '#222b2e'
+    foreground: '#ffffff'
+
+  cursor:
+
+    text: '#000000'
+    cursor: '#ff9966'
+
+  normal:
+    black:   '#424b4e'
+    red:     '#FB6A6A'
+    green:   '#8FFF85'
+    yellow:  '#ffd166'
+    blue:    '#809afa'
+    magenta: '#D566FF'
+    cyan:    '#85f2FB'
+    white:   '#ffffff'
+
+  bright:
+    black:   '#424b4e'
+    red:     '#FB6A6A'
+    green:   '#8FFF85'
+    yellow:  '#ffd166'
+    blue:    '#809afa'
+    magenta: '#D566FF'
+    cyan:    '#85f2FB'
+    white:   '#ffffff'
+
+selection:
+
+  semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
+  save_to_clipboard: true
+
+shell:
+  program: /bin/fish
+  args:
+    - --login
+
+working_directory: None

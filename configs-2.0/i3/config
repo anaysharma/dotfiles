@@ -1,0 +1,285 @@
+#########     Configuration    #########
+
+###           the easy stuff         ###
+
+    # font pango: Jetbrains mono 9
+    font pango: Segoe UI Variable 10
+
+    # Key to do all the things (Mod1=Alt, Mod4=Super/Windows)
+        set $mod Mod4
+
+    # window rounded corners
+       #border_radius 3
+
+    # Home row direction keys, like vim
+        set $left h
+        set $down j
+        set $up k
+        set $right l
+
+    # Default Terminal
+        set $term alacritty
+
+    # Autofocus on hover, also when switching workspaces
+        focus_follows_mouse yes
+
+    # Borders
+        # Also removes all title bars
+        for_window [class="^.*"] border pixel 0
+
+        # Hide borders at the edge of the screen
+        hide_edge_borders smart
+
+        # Set colours various window states
+        # Syntax: client.<class> <border> <background> <text> [<indicator> [<child_border>]]
+        # The available classes are:
+            # client.focused: The window that has focus.
+            # client.focused_inactive: The most recently focused view within a container which is not focused.
+            # client.placeholder: Ignored (present for i3 compatibility).
+            # client.unfocused: A view that does not have focus.
+            # client.urgent: A view with an urgency hint. Note: Native Wayland windows do not support urgency. Urgency only works for Xwayland windows.
+        #The meaning of each color is:
+            # border: The border around the title bar.
+            # background: The background of the title bar.
+            # text: The text color of the title bar.
+            # indicator: The color used to indicate where a new view will open. In a tiled container, this would paint the right border of the current view if a new view would be opened to the right.
+            # child_border: The border around the view itself.
+        # The default colors are:
+            # class             border  background      text    indicator       child_border
+            # background        n/a         #ffffff     n/a         n/a         n/a
+            # focused           #4c7899     #285577     #ffffff     #2e9ef4     #285577
+            # focused_inactive  #333333     #5f676a     #ffffff     #484e50     #5f676a
+            # unfocused         #333333     #222222     #888888     #292d2e     #222222
+            # urgent            #2f343a     #900000     #ffffff     #900000     #900000
+            # placeholder       #000000     #0c0c0c     #ffffff     #000000     #0c0c0c
+
+        client.focused           #2EB398    #2EB398     #191F21     #2EB398     #2EB398
+        client.focused_inactive  #538077    #538077     #ffffff     #538077     #538077
+        client.unfocused         #335550    #335550     #ffffff     #335550     #335550
+
+    # Gaps
+        # gaps inner|outer|horizontal|vertical|top|right|bottom|left <amount>
+        # Sets default amount pixels of inner or outer gap
+        # the inner affects spacing around each view
+        # the outer affects the spacing around each workspace
+        # To reduce or remove outer gaps, outer gaps can be set to a negative value.
+        gaps inner 5
+        gaps outer 0
+        #gaps vertical 0
+        #gaps horizontal 0
+        #gaps top 0
+        #gaps bottom 0
+        #gaps left 0
+        #gaps right 0
+
+        # Hide gaps when there is only 1 window
+        smart_gaps on
+
+
+#########       Launchers      #########
+###         Menu for commands        ###
+
+    # Program Launcher
+        # bindcode 133 --release exec "rofi -no-lazy-grab -show drun -modi drun"
+        bindsym $mod+d exec rofi -no-lazy-grab -show drun -modi drun
+
+    # Power menu
+        bindcode 124 --release exec "~/.config/polybar/forest/scripts/powermenu.sh"
+
+    # emoji picker
+        bindsym $mod+o exec rofi -show emoji
+
+    # browser
+        bindsym $mod+b exec firefox
+
+    # file manager
+        bindsym $mod+f exec thunar &
+
+    # tdrop scratchpad
+        bindsym Ctrl+space exec "tdrop -n 2 -w 715 -h 683 -x 325 -y 42 -a alacritty --class scratchpad,scratchpad --config-file ~/.config/i3/alacritty/alacritty.yml"
+        for_window [class="scratchpad"] floating enable
+        for_window [class="Popsicle"] floating enable
+
+
+#########    Key Bindindings   #########
+
+    # change focus
+        bindsym $mod+h focus left
+        bindsym $mod+j focus down
+        bindsym $mod+k focus up
+        bindsym $mod+l focus right
+
+    # alternatively, you can use the cursor keys:
+        bindsym $mod+Left focus left
+        bindsym $mod+Down focus down
+        bindsym $mod+Up focus up
+        bindsym $mod+Right focus right
+
+    # move focused window
+        bindsym $mod+Shift+h move left
+        bindsym $mod+Shift+j move down
+        bindsym $mod+Shift+k move up
+        bindsym $mod+Shift+l move right
+
+    # alternatively, you can use the cursor keys:
+        bindsym $mod+Shift+Left move left
+        bindsym $mod+Shift+Down move down
+        bindsym $mod+Shift+Up move up
+        bindsym $mod+Shift+Right move right
+
+    # split in horizontal orientation
+        bindsym $mod+c split h
+
+    # split in vertical orientation
+        bindsym $mod+r split v
+
+    # enter fullscreen mode for the focused container
+        bindsym $mod+Shift+f fullscreen toggle
+
+    # change container layout (stacked, tabbed, toggle split)
+        bindsym $mod+s layout stacking
+        bindsym $mod+w layout tabbed
+        bindsym $mod+e layout toggle split
+
+    # toggle tiling / floating
+        bindsym $mod+Shift+space floating toggle
+
+    # change focus between tiling / floating windows
+        bindsym $mod+space focus mode_toggle
+
+    # focus the parent container
+        bindsym $mod+a focus parent
+
+    # kill focused window
+        bindsym $mod+Shift+c kill
+
+    # Start a terminal
+        bindsym $mod+Return exec $term
+
+    # Resize (floating and tiled) windows with mouse
+        floating_modifier $mod
+
+    # reload i3 config
+        #bindsym $mod+Shift+c reload
+
+    # reload i3
+        bindsym $mod+Shift+r restart
+
+    # Exit i3
+        bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+    #prev/next workspace. bind it to your mouse if you have a sticky keyboard
+        bindsym $mod+Shift+o workspace prev_on_output
+        bindsym $mod+Shift+p workspace next_on_output
+        bindsym Mod1+Tab workspace back_and_forth
+
+    # Switch to workspace
+        bindsym $mod+1 workspace number 1
+        bindsym $mod+2 workspace number 2
+        bindsym $mod+3 workspace number 3
+        bindsym $mod+4 workspace number 4
+        bindsym $mod+5 workspace number 5
+        bindsym $mod+6 workspace number 6
+        bindsym $mod+7 workspace number 7
+        bindsym $mod+8 workspace number 8
+        bindsym $mod+9 workspace number 9
+        bindsym $mod+0 workspace number 10
+
+    # Move focused container to workspace
+        bindsym $mod+Shift+1 move container to workspace number 1
+        bindsym $mod+Shift+2 move container to workspace number 2
+        bindsym $mod+Shift+3 move container to workspace number 3
+        bindsym $mod+Shift+4 move container to workspace number 4
+        bindsym $mod+Shift+5 move container to workspace number 5
+        bindsym $mod+Shift+6 move container to workspace number 6
+        bindsym $mod+Shift+7 move container to workspace number 7
+        bindsym $mod+Shift+8 move container to workspace number 8
+        bindsym $mod+Shift+9 move container to workspace number 9
+        bindsym $mod+Shift+0 move container to workspace number 10
+
+    # Toggle focused window tiled/floating
+        bindsym $mod+Shift+t floating toggle
+
+    # Swap focus between the tiling area and the floating area
+        bindsym $mod+t focus mode_toggle
+
+    # Media keys
+        bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+        bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+        bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+        bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+    # Sreen brightness controls
+        bindsym XF86MonBrightnessUp exec --no-startup-id "brightnessctl s +5"
+        bindsym XF86MonBrightnessDown exec --no-startup-id "brightnessctl s 5-"
+
+
+    # fn calculator shortcut
+        bindsym XF86Calculator exec galculator
+
+    # Screenshot / share shortcuts
+        bindsym Print exec "maim ~/Pictures/Screenshot-$(date -Iseconds | cut -d'+' -f1).png"
+        bindsym Shift+Print exec "maim | xclip -selection clipboard -t image/png"
+        bindsym $mod+Print exec "maim -u -s -n -l -c 0.157,0.333,0.466,0.1 ~/Pictures/Screenshot-$(date -Iseconds | cut -d'+' -f1).png"
+        bindsym $mod+Shift+Print exec "maim -u -s -n -l -c 0.157,0.333,0.466,0.1 | xclip -selection clipboard -t image/png"
+
+#########  Resizing Containers #########
+
+    mode "resize" {
+        bindsym h resize shrink width 10 px or 5 ppt
+        bindsym j resize grow height 10 px or 5 ppt
+        bindsym k resize shrink height 10 px or 5 ppt
+        bindsym l resize grow width 10 px or 5 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 5 ppt
+        bindsym Down resize grow height 10 px or 5 ppt
+        bindsym Up resize shrink height 10 px or 5 ppt
+        bindsym Right resize grow width 10 px or 5 ppt
+
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+m mode "default"
+    }
+    bindsym $mod+m mode "resize"
+
+# set floating (nontiling) for apps needing it
+for_window [class="Yad" instance="yad"] floating enable
+for_window [class="Galculator" instance="galculator"] floating enable
+for_window [class="Blueberry.py" instance="blueberry.py"] floating enable
+
+# set floating (nontiling) for special apps
+for_window [class="Xsane" instance="xsane"] floating enable
+for_window [class="Pavucontrol" instance="pavucontrol"] floating enable
+for_window [class="qt5ct" instance="qt5ct"] floating enable
+for_window [class="Blueberry.py" instance="blueberry.py"] floating enable
+for_window [class="Bluetooth-sendto" instance="bluetooth-sendto"] floating enable
+for_window [class="Pamac-manager"] floating enable
+for_window [window_role="About"] floating enable
+
+
+#########   Window Properties  #########
+###   Floating/Tiling / Workspaces   ###
+
+    # Brave, chrome, chromium
+        for_window [title="Picture-in-picture"] floating enable
+
+    # Assign programs to workspace
+        # assign [class="<APP NAME>"] → number <WORKSPACE NO>
+        assign [class="firefox"] → number 2
+        assign [class="subl"] → number 3
+
+
+# start initial programs
+    # source locale settings
+    exec_always --no-startup-id unset LANG
+    exec_always --no-startup-id source /etc/profile.d/locale.sh &
+    exec_always --no-startup-id ~/.config/polybar/forest/launch.sh
+    exec_always --no-startup-id picom
+    exec --no-startup-id ~/.fehbg
+    exec --no-startup-id dunst -config ~/.config/dunst/dunstrc
+    exec --no-startup-id /usr/lib/polkit-1/polkitd --no-debug &
+    exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+    exec --no-startup-id nm-applet &
+    exec --no-startup-id "killall -q mpd; mpd"

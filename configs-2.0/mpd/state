@@ -1,0 +1,22 @@
+sw_volume: 80
+audio_device_state:1:mpd alsamixer-output
+audio_device_state:1:toggle_visualizer
+state: pause
+current: 2
+time: 3249.480000
+random: 0
+repeat: 1
+single: 0
+consume: 0
+crossfade: 0
+mixrampdb: 0.000000
+mixrampdelay: -1.000000
+playlist_begin
+0:lofi-beats-4am.mp3
+1:lofi-beats-midnight.mp3
+2:lofi-beats-morning.mp3
+3:lofi-beats-sunset.mp3
+4:lofi-beatz-one.mp3
+5:Elevated.mp3
+6:y2mate.com - Zaroori Tha Lofi Slowed Reverb Rahat Fateh Ali Khan SR Lofi.mp3
+playlist_end

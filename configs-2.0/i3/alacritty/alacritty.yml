@@ -1,0 +1,81 @@
+# ======================================================= #
+# ======= THIS CONFIG IS ONLY FOR i3wm SCRATCHPAD ======= #
+# ======================================================= #
+
+
+env:
+  # This value is used to set the `$TERM` environment variable for
+  # each instance of Alacritty. If it is not present, alacritty will
+  # check the local terminfo database and use `alacritty` if it is
+  # available, otherwise `xterm-256color` is used.
+  TERM: xterm-256color
+
+window:
+
+  padding:
+    x: 4
+    y: 4
+
+  dimensions:
+    columns: 85
+    lines: 24
+
+  opacity: 0.9
+
+cursor:
+  style:
+    shape: Beam
+    blinking: Always
+
+  blink_interval: 350
+
+font:
+
+  normal:
+    family: Jetbrainsmono nerd font
+
+  size: 9
+
+  offset:
+      x: 0
+      y: 0
+
+colors:
+  primary:
+    background: '#222b2e'
+    foreground: '#ffffff'
+  cursor:
+    text: '#000000'
+    cursor: '#ff9966'
+
+  normal:
+    black:   '#424b4e'
+    red:     '#FB6A6A'
+    green:   '#8FFF85'
+    yellow:  '#ffd166'
+    blue:    '#809afa'
+    magenta: '#D566FF'
+    cyan:    '#85f2FB'
+    white:   '#ffffff'
+
+  bright:
+    black:   '#424b4e'
+    red:     '#FB6A6A'
+    green:   '#8FFF85'
+    yellow:  '#ffd166'
+    blue:    '#809afa'
+    magenta: '#D566FF'
+    cyan:    '#85f2FB'
+    white:   '#ffffff'
+
+selection:
+  semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
+
+  save_to_clipboard: true
+
+shell:
+  program: /bin/fish
+  args:
+    - --login
+
+working_directory: None
