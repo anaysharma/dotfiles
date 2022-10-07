@@ -1,0 +1,309 @@
+/*  firefox css config, by-
+
+       ▄████████ ███▄▄▄▄      ▄████████ ▄██   ▄
+      ███    ███ ███▀▀▀██▄   ███    ███ ███   ██▄
+      ███    ███ ███   ███   ███    ███ ███▄▄▄███
+      ███    ███ ███   ███   ███    ███ ▀▀▀▀▀▀███
+    ▀███████████ ███   ███ ▀███████████ ▄██   ███
+      ███    ███ ███   ███   ███    ███ ███   ███
+      ███    ███ ███   ███   ███    ███ ███   ███
+      ███    █▀   ▀█   █▀    ███    █▀   ▀█████▀
+
+*/
+
+
+:root {
+    --inline-tab-padding            : 8px !important;
+    --tab-min-height                : 24px !important;
+    --tab-max-height                : 24px !important;
+    --tabs-navbar-shadow-size       : 0 !important;
+    --tab-shadow-max-size           : 0 !important;
+    --toolbar-start-end-padding     : 0 !important;
+    --toolbarbutton-outer-padding   : 0 !important;
+}
+
+* {
+    --lwt-tab-line-color            : #222b2e !important;
+    border-radius       : 0 !important;
+}
+
+#tabbrowser-tabs {
+    height              : 24px !important;
+    margin-left         : 450px !important;
+}
+
+.tab-close-button {
+    height              : 18px !important;
+    width               : 18px !important;
+    padding             : 4px !important;
+}
+
+#TabsToolbar-customization-target { height: 28px !important }
+
+.tab-throbber-tabslist,
+.tab-throbber,
+.tab-icon-pending,
+.tab-icon-image,
+.tab-sharing-icon-overlay,
+.tab-icon-overlay {
+    height              : 16px !important;
+    width               : 16px !important;
+}
+
+.tab-background {
+    background-color    : #00000000 !important;
+    margin              : 0 !important;
+    padding-bottom      : 1px !important;
+}
+
+.tabbrowser-tab:hover >
+.tab-stack > .tab-background { background-color: #ffffff10 !important }
+
+#urlbar-input { height  : 17px !important; }
+
+#urlbar {
+    min-height          : 24px !important;
+    padding             : 0 4px !important;
+    margin              : 0 !important;
+}
+
+.notification-anchor-icon,
+.urlbar-page-action,
+#urlbar-input-container,
+#urlbar-container {
+    padding             : 0 !important;
+    margin              : 0 !important;
+}
+
+#nav-bar > .toolbarbutton-1 { padding: 0px !important }
+
+.bookmark-item {
+    padding             : 4px 10px !important;
+    margin-top          : 1px !important;
+    margin-bottom       : 2px !important;
+    color               : rgba(255, 255, 255, 0.6) !important;
+}
+
+.bookmark-item > image.toolbarbutton-icon { display: none !important }
+
+.titlebar-spacer[type="pre-tabs"] { width: 0 !important }
+
+.tabbrowser-tab:hover > .tab-stack >
+.tab-background:not([selected], [multiselected]) {
+    background-color    : color-mix(in srgb, currentColor 12%, transparent)
+}
+
+.tabbrowser-tab > .tab-stack >
+.tab-background:not([selected], [multiselected]) {
+    background-color    : color-mix(in srgb, currentColor 6%, transparent)
+}
+
+.tabbrowser-tab[fadein]:not([selected]):not([pinned]) {
+    max-width           : 100px !important;
+    min-width           : 100px !important;
+    margin-left         : -3px !important;
+}
+
+.tabbrowser-tab[selected][fadein]:not([pinned]) {
+    max-width           : 200px !important;
+    min-width           : 160px !important;
+    color               : rgba(255, 255, 255, 1) !important;
+    margin-left         : -3px !important;
+}
+
+#TabsToolbar .close-icon { display: none !important }
+
+#TabsToolbar .tabbrowser-tab[selected=true]:not([pinned]) .close-icon {
+    display             : -moz-box !important
+}
+
+#TabsToolbar
+.tabbrowser-tab:not([selected="true"]):not([pinned]):hover .close-icon {
+    display             : -moz-box !important
+}
+
+#tabbrowser-tabs[haspinnedtabs]:not([positionpinnedtabs]) >
+#tabbrowser-arrowscrollbox >
+.tabbrowser-tab[first-visible-unpinned-tab] {
+    margin-inline-start : initial !important
+}
+
+#main-window { background: #222b2ea0 !important }
+
+#navigator-toolbox { background-color: #222b2ea0 !important }
+
+#TabsToolbar:-moz-lwtheme-darktext,
+.table-widget-empty-text:-moz-lwtheme-darktext {
+    -moz-appearance     : -moz-mac-vibrant-titlebar-light !important
+}
+
+#TabsToolbar:-moz-lwtheme-brighttext,
+.table-widget-empty-text:-moz-lwtheme-brighttext {
+    -moz-appearance     : -moz-mac-vibrant-titlebar-dark !important
+}
+
+.tabbrowser-tab[selected="true"] .tab-label:-moz-lwtheme-brighttext {
+    color               : white !important
+}
+
+.tabbrowser-tab .tab-label:-moz-lwtheme-brighttext {
+    color               : rgba(255,255,255,0.7) !important
+}
+
+.tabbrowser-tab[selected="true"] .tab-background:-moz-lwtheme-brighttext {
+    box-shadow          : inset 0em -4em 0em var(--toolbar-bgcolor) !important
+}
+
+#identity-icon-label[value="Extension (Tabliss)"] { display: none !important }
+
+#identity-box { margin: 0 !important }
+
+#identity-icon-box { padding: 0 1px !important }
+
+#PlacesToolbarItems,
+#PersonalToolbar,
+#personal-bookmarks {
+    display             : flex !important;
+    justify-items       : center !important;
+    margin              : 0 auto !important;
+    border              : none !important;
+}
+
+#fxa-avatar-image {	border-radius: 50% !important }
+
+#back-button[disabled="true"] { display: none !important }
+
+#forward-button[disabled="true"] { display: none !important }
+
+#tracking-protection-icon-container { display: none !important }
+
+#identity-box { display: none !important }
+
+#TabsToolbar { margin-left : var(--navbarWidth) !important }
+
+#nav-bar {
+    margin-right        : calc(100vw - 450px) !important;
+    background          : #141A1B !important;
+    box-shadow          : none !important;
+}
+
+#urlbar-container { min-width: 0px !important }
+
+:root[uidensity="compact"] #nav-bar { margin-top: -28px !important }
+
+:root:not([uidensity="compact"]):not([uidensity="touch"]) #nav-bar {
+    margin-top          : -44px !important
+}
+
+:root[uidensity="touch"] #nav-bar { margin-top: -49px !important }
+
+#navigator-toolbox { border: none !important }
+
+.titlebar-spacer { display: none !important }
+
+#urlbar-background {
+    outline-width       : 1px !important;
+}
+
+#urlbar:not(:hover):not([breakout][breakout-extend]) > #urlbar-background {
+    box-shadow          : none !important;
+    background          : none !important;
+}
+
+.urlbar-icon, #userContext-indicator, #userContext-label {
+    fill                : transparent !important;
+    background          : transparent !important;
+    color               : transparent !important;
+}
+
+#urlbar:hover .urlbar-icon,
+#urlbar:active .urlbar-icon,
+#urlbar[focused] .urlbar-icon {
+    fill                : var(--toolbar-color) !important;
+}
+
+.subviewbutton,
+.tab-close-button,
+.urlbar-icon,
+.urlbar-input-box,
+.urlbar-icon-wrapper,
+#identity-box,
+#identity-box image,
+#tracking-protection-icon,
+#tracking-protection-icon-container,
+#urlbar-background,
+#userContext-indicator,
+#userContext-label,
+[anonid=urlbar-go-button],
+tab:not(:active) .tab-background,
+tab:not([beforeselected-visible])::after,
+tab[visuallyselected] .tab-background::before,
+tab[visuallyselected] .tab-background::before,
+stack {
+    transition          : var(--animationSpeed) !important;
+}
+
+#PanelUI-menu-button,
+#back-button,
+toolbar .toolbarbutton-1 {
+    margin              : none !important;
+    padding             : none !important;
+}
+
+.tab-content {
+    box-shadow          : none !important;
+    padding             : 0 6px !important;
+}
+
+/*.tab-content[selected] {
+    border-left         : 2px solid #2EB398 !important;
+}*/
+
+.tab-stack,
+.tab-background {
+    box-shadow          : none !important;
+}
+
+#appMenu-popup,
+#widget-overflow {
+    opacity             : 0.9 !important;
+}
+
+#appMenu-popup { transform: scale(1.03, 1.015) !important; }
+
+#widget-overflow { transform: scale(1.031) !important }
+
+#star-button-box { width: 10px !important }
+
+.tab-throbber[busy]::before { display: none !important }
+
+.tab-throbber[busy]:not([progress]),
+.tab-throbber[busy][progress] {
+    display             : block !important;
+    padding             : 0 !important;
+    background-repeat   : no-repeat !important;
+    background-position : center !important;
+    background-size     : 14px !important;
+    transform-origin    : 50% 50% !important;
+
+}
+
+.tab-throbber[busy]:not([progress]){
+    background-image    : url("blok2.gif") !important;
+    /*animation           : 2s loading2 infinite linear !important;*/
+}
+
+.tab-throbber[busy][progress] {
+    background-image    : url("blok.gif") !important;
+    /*animation           : 800ms loading infinite linear !important;*/
+}
+
+/*@keyframes loading {
+  from { transform: rotate(0deg) }
+  to { transform: rotate(360deg) }
+}
+
+@keyframes loading2 {
+  from { transform: rotate(0deg) }
+  to { transform: rotate(-360deg) }
+}*/

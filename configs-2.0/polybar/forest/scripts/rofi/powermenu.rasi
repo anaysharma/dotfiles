@@ -1,0 +1,93 @@
+configuration{
+    modi:                   "drun,calc,emoji";
+    font:                   "Jetbrains mono 50";
+    drun-display-format:    "{name}";
+    disable-history:        false;
+    hide-scrollbar:         true;
+    display-drun:           "FILTER";
+    hover-select: true;
+    me-select-entry: "";
+    me-accept-entry: [ MousePrimary, MouseSecondary, MouseDPrimary ];
+}
+
+element-text, element-icon , mode-switcher {
+    background-color: inherit;
+    text-color:       inherit;
+}
+
+window {
+    border:             0px;
+    border-color:       #2eb398;
+    background-color:   rgba(34, 43, 46, 0.8);
+    width:              460px;
+}
+
+inputbar {
+    enabled: false;
+    children: [];
+    background-color: #1b222400;
+    border-radius: 0;
+    padding: 0px;
+}
+
+prompt {
+    enabled: false;
+    background-color: #2eb398;
+    padding: 10px;
+    text-color: #141a1b;
+    margin: 0;
+}
+
+textbox-prompt-colon {
+    expand: false;
+    str: ":";
+}
+
+mainbox {
+    margin: 0;
+    paddin: 0;
+    background-color: #00000000;
+}
+
+entry {
+    padding: 0px;
+    margin: 0;
+    text-color: #ffffff;
+    background-color: rgba(49, 58, 61, 0);
+}
+
+listview {
+    lines: 1;
+    margin: 0;
+    padding: 10px 20px;
+    columns: 4;   
+    background-color:   rgba(34, 43, 46, 0);
+}
+
+element {
+    padding: 20px 15px 5px 20px;
+    background-color: #00000000;
+    text-color: #ffffff50 ;
+}
+
+element selected {
+    border-color: #20A877f0; 
+    background-color: rgba(255, 255, 255, 0);
+    text-color: #ff5055;
+}
+
+message {
+    border: 1px;
+    border-color: #20A877;
+    background-color: #ffffff0f;
+    text-color: #e9eaea;
+    margin: 3px 5px 0px 5px;
+    padding: 0 0 2px 0;
+}
+
+textbox {
+    background-color: #00000000;
+    margin: 3px 5px 0px 5px;
+    text-color: #e9eaea;
+    padding: 0 0 2px 0;
+}

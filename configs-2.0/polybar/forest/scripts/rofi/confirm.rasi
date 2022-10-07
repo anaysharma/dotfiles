@@ -1,0 +1,18 @@
+
+* {
+    background-color:       rgba(34, 43, 46, 0);
+    text-color:             #ffffff;
+    font:                   "Jetbrains mono 10";
+}
+
+window {
+    width:                  320px;
+    padding:                20px;
+    location:               center;
+    background-color:       rgba(34, 43, 46, 0.9);
+}
+
+entry {
+    expand:                 true;
+    text-color:             #ffffffe0;
+}
