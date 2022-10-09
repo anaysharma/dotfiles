@@ -2,11 +2,24 @@
 {
     "variables":
     {
-        "tabSelectedBorderBorder": "#2EB398"
+        "fontSizeSm": 11,
+        "fontSizeMd": 11,
+        "fontSizeLg": 11,
+        "fontSizeHuge": 24,
+        "sidebarBorder": "#444c5600",
+        "tabBorder": "#444c5600",
+        "gridBorder": "#444c5600",
+        // "overlayBorder": "#2d333bff",
+        "panelControlBorder": "#444c5600",
+        "inputBorder": "#444c5600",
+        "buttonBorder": "#444c5600",
+        "statusBarBorder": "#444c5600",
+        "vcsAnnotationBorder": "#444c5600",
+        "statusBarBackground": "#f6f8fa",
     },
     "rules":
     [
-        {
+{
             "class": "tabset_control",
             "layer0.tint": "var(tabInactiveBackground)",
             "layer0.opacity": 1,
@@ -21,7 +34,7 @@
             "layer1.opacity": 1,
             "content_margin": [
                 0,
-                0,
+                -1,
                 8,
                 0
             ],
@@ -29,7 +42,7 @@
             "tint_index": 0,
             "tab_overlap": 0,
             "tab_width": 160,
-            "tab_height": 30,
+            "tab_height": 31,
             "mouse_wheel_switch": false,
             "tint_modifier": "var(tabInactiveBackground)"
         },
@@ -46,10 +59,10 @@
             "layer1.opacity": 1,
             "layer1.tint": "var(statusBarBorder)",
             "content_margin": [
+                3,
                 2,
-                0,
-                0,
-                0
+                3,
+                2
             ]
         },
         {
@@ -194,11 +207,11 @@
         {
             "class": "sidebar_tree",
             "row_padding": [
-                16,
-                3
+                20,
+                6
             ],
-            "indent": 10,
-            "indent_offset": 1,
+            "indent": 15,
+            "indent_offset": 0,
             "indent_top_level": false,
             "dark_content": true,
             "spacer_rows": false
@@ -252,4 +265,3 @@
         },
     ]
 }
-
