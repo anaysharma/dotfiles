@@ -1,8 +1,25 @@
 /* hatred toward this peice of code will increase going deeper, i am sorry */
 
+/* NOTE: use "mica for everyone" on windows with process rule of firefox */
+
+#tabbrowser-tabs:not([noshadowfortests]) .tab-background:is([selected], [multiselected]) {
+	box-shadow: 0 0 5px -1px rgba(0, 0, 0, 0.3) !important;
+	background-color: #fffa !important;
+	border: 1px solid #fff !important;
+}
+
+.urlbarView-row > .urlbarView-row-inner {
+	padding-inline: 8px !important;
+}
+
 #main-window {
 	background-color: transparent !important;
 	-moz-appearance: -moz-win-glass !important;
+}
+
+#TabsToolbar {
+/*	box-shadow: inset 0 -4px 6px -6px rgba(0, 0, 0, 0.2);*/
+	border-bottom: 1px solid #8884;
 }
 
 #navigator-toolbox {
@@ -34,8 +51,8 @@
 :root {
     --tab-corner-rounding: 7px;
     --button-corner-rounding: 20px;
-    --menu-corner-rounding: 6px;
-    --menu-item-height: 4px;
+    --menu-corner-rounding: 4.5px;
+    --menu-item-height: 24px;
     --animation-speed: 0.4s;
 	--urlbar-box-bgcolor: var(--button-bgcolor) !important;
 	--button-hover-bgcolor: color-mix(in srgb, currentColor 17%, transparent) !important;
@@ -56,7 +73,7 @@
 
 :root[uidensity='compact'] #navigator-toolbox {
 	--uc-bm-padding: 0px !important;
-	--uc-navbar-height: -35px !important;
+	--uc-navbar-height: -36px !important;
 	--tab-min-height: 27px !important;
 	--tab-padding: 0 6px;
 	--tab-max-width: 200px !important;
@@ -89,9 +106,10 @@
 	background-repeat: repeat, var(--lwt-background-tiling);
 	transform: rotateX(90deg);
 	transform-origin: top;
-	transition: transform 135ms linear var(--uc-autohide-toolbar-delay) !important;
+	transition: transform 100ms linear var(--uc-autohide-toolbar-delay) !important;
 	z-index: 2;
 }
+
 
 :root[sessionrestored] #PersonalToolbar {
 	z-index: 1;
@@ -124,20 +142,22 @@
 	border-width: 1px !important;
 }
 
-#urlbar:not([focused='true']) > #urlbar-background {
-	border: 1px solid rgba(160, 160, 160, 0.4) !important;
-	background: #ffffff15 !important;
+#urlbar:not([focused='true']) > #urlbar-input-container {
+	box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
+	background-color: #ffffff !important;
 }
 
-#urlbar[open] > #urlbar-background {
-	border: 1px solid rgba(160, 160, 160, 0.4) !important;
-	box-shadow: none !important;
+#urlbar:is([open='true']) > #urlbar-background {
+    box-shadow: 0px 8px 10px -2px #0002 !important;
+	background-color: #ffffff !important;
+	border-radius: 4.5px !important;
+    border: 1px solid #8883 !important;
 }
 
 #navigator-toolbox {
 	--uc-bm-padding: 2px;
-	--uc-bm-height: calc( var(--bookmarks-height) + 2 * var(--uc-bm-padding)); /* Might need to adjust if the toolbar has other buttons */
-	--uc-autohide-toolbar-delay: 400ms;
+	--uc-bm-height: calc( var(--bookmarks-height) + 2 * var(--uc-bm-padding));
+	--uc-autohide-toolbar-delay: 200ms;
 }
 
 .tab-background {
@@ -191,7 +211,8 @@
 }
 
 #PersonalToolbar {
-	border-bottom: 1px solid var(--chrome-content-separator-color);
+	border-bottom: 1px solid #8884 !important;
+	box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.1) !important;
 }
 
 #navigator-toolbox > * {
@@ -207,6 +228,7 @@
 	transition-delay: 100ms !important;
 	transform: rotateX(0);
 }
+
 
 #navigator-toolbox:hover > .browser-toolbar {
 	transition-delay: 100ms !important;
@@ -270,6 +292,14 @@
 	display: inline !important;
 }
 
+.tab-close-button {
+	padding: 4px !important;
+	height: 18px !important;
+	width: 18px !important;
+	margin-inline-end: -2px !important;
+	border-radius: 2px !important;
+}
+
 .tab-content {
 	padding:  var(--tab-padding) !important;
 	margin-block: auto !important;
@@ -308,8 +338,8 @@ menupopup menuseparator {
 }
 
 menupopup:not(#BMB_bookmarksPopup) {
-    padding: 9px !important;
-	margin: -6px -9px 0 !important;
+    padding: 0 4px 9px 4px !important;
+	margin: -5px -10px !important;
     border: 0 !important;
     background: 0 !important;
 }
@@ -322,14 +352,14 @@ menu[open] menupopup:not(#BMB_bookmarksPopup) {
     transform: translateY(4px) !important;
 }
 
-menupopup menuseparator
-{
+menupopup menuseparator {
 	margin-top: 0px !important;
     margin-bottom: 0px !important;
 	padding: 0px !important;
     border-bottom: none !important;
 	opacity: 0.3 !important;
 }
+
 .menupopup-arrowscrollbox {
     background: Menu !important; /* fall back if adaptable colors are removed */
 }
@@ -352,7 +382,9 @@ menupopup menuseparator
     padding: 4px !important;
 }
 
-.panel-arrowcontainer .panel-arrowcontent, .menupopup-arrowscrollbox, hbox[flex="1"][part="innerbox"] {
+.panel-arrowcontainer .panel-arrowcontent,
+.menupopup-arrowscrollbox,
+hbox[flex="1"][part="innerbox"] {
     border-radius: var(--menu-corner-rounding) !important;
 }
 
@@ -372,7 +404,55 @@ menu,
 menuitem, 
 menucaption {
     padding-inline: 8px !important;
-    border-radius: 3px !important;
+    border-radius: 2px !important;
+    background-color: transparent !important;
+}
+
+
+.subviewbutton,
+.subviewbutton-iconic {
+    border-radius: 2px !important;
+    background-color: transparent !important;	
+}
+
+menu:hover,
+menuitem:hover,
+.subviewbutton:hover,
+.subviewbutton-iconic:hover {
+	background-color: rgba(0, 0, 0, 0.06) !important;
+}
+
+.subviewbutton > * > *,
+.subviewbutton-iconic > * > * {
+	background-color: transparent !important;
+}
+
+@media (prefers-color-scheme: dark) {
+	menu:hover,
+	menuitem:hover,
+	.subviewbutton:hover,
+	.subviewbutton-iconic:hover {
+		background-color: rgba(255, 255, 255, 0.1) !important;
+	}
+	#urlbar:is([open='true']) > #urlbar-background {
+		background-color: rgba(41, 40, 45, 1) !important;
+	}
+	#urlbar:not([focused='true']) > #urlbar-input-container {
+		box-shadow: 0 0 7px -2px rgba(0, 0, 0, 0.5);
+		background-color: rgba(95, 90, 105, 0.4) !important;
+	}
+	#tabbrowser-tabs:not([noshadowfortests]) .tab-background:is([selected], [multiselected]) {
+		box-shadow: 0 0 5px -1px rgba(0, 0, 0, 0.3) !important;
+		background-image: none !important;
+		background-color: #5556 !important;
+		border: 1px solid #8882 !important;
+	}
+	/*#TabsToolbar {
+		box-shadow: inset 0 -5px 6px -6px rgba(0, 0, 0, 0.3);
+	}*/
+	#PersonalToolbar {
+		box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.4) !important;
+	}
 }
 
 menupopup > menuitem, menupopup > menu {
@@ -410,7 +490,21 @@ panelview toolbarbutton:not(#fxa-manage-account-button) {
     margin-top: 0px !important;
 }
 
-#new-tab-button:hover {
-    background-color: transparent !important;
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.4) !important;
+panel#appMenu-popup,
+panel#customizationui-widget-panel {
+	padding: 0 4px 9px 4px !important;
+	margin: 0 -10px !important;
+}
+
+slot:nth-child(1) {
+    box-shadow: 0px 8px 10px -2px #0002 !important;
+    border-radius: var(--menu-corner-rounding) !important;
+    border: 1px solid #8883 !important;
+}
+
+#downloadsPanel,
+#notification-popup,
+#appMenu-notification-popup {
+	padding: 14px !important;
+	margin: -16px -20px !important;
 }
