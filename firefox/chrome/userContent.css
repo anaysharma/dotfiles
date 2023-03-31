@@ -1,0 +1,99 @@
+@namespace url(http://www.w3.org/1999/xhtml);
+
+@-moz-document url-prefix(chrome://devtools/content/)
+{
+	:root {
+		--monospace-font-family: 'Jetbrains mono', monospace !important;
+		--theme-code-font-size: 12px !important;
+	}
+}
+
+@-moz-document url('about:home'), url('about:newtab') {
+	body {
+		background-color: #eee !important;
+	}
+
+	div.outer-wrapper {
+		padding: 0 !important;
+		display: grid !important;
+		place-items: center !important;
+	}
+
+	.non-collapsible-section {
+		padding-inline: 10vw !important;
+	}
+
+	.search-wrapper {
+		display: grid;
+	}
+
+	.logo-and-wordmark {
+		justify-content: start !important;
+		margin-bottom: 20px !important;
+	}
+
+	.logo {
+		background-size: 50px !important;
+		height: 50px !important;
+		width: 50px !important;
+	}
+
+	.wordmark {
+		background-size: 100px !important;
+		width: 100px !important;
+		height: 50px !important;
+		opacity: 0.7 !important;
+	}
+
+	.fake-editable,
+	.search-handoff-button {
+		border-radius: 4px !important;
+		box-shadow: none !important;
+	}
+
+	.search-inner-wrapper {
+		border-radius: 5px;
+		width: 100% !important;
+		background-color: #f4f4f4;
+		border-top: 1px solid #fff;
+		border-bottom: 1px solid #ddd;
+		box-shadow: 0 5px 20px -5px #0002 !important;
+	}
+
+	.fake-editable,
+	.search-handoff-button {
+		padding-inline: 20px !important;
+	}
+
+	.search-handoff-button {
+		background: none !important;
+	}
+
+	main {
+		padding-bottom: 80px !important;
+	}
+
+	@media (prefers-color-scheme: dark) {
+		body {
+			background-color: #1a1a1a !important;
+		}
+
+		.search-inner-wrapper,
+		.fake-editable,
+		.search-handoff-button {
+			background: #222 !important;
+		}
+
+		.search-handoff-button {
+			background: #222 !important;
+		}
+
+		.search-inner-wrapper {
+			border-radius: 5px;
+			width: 100% !important;
+			border-top-color: #fff1;
+			border-bottom-color: #0001;
+			box-shadow: 0 5px 20px -5px #0008 !important;
+		}
+	}
+}
