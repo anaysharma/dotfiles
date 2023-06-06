@@ -22,8 +22,6 @@
         background-color: transparent !important;
     }
 
-    /* System window control buttons */
-
     @media (min-resolution: 1dppx) {
         .titlebar-buttonbox-container {
             --titlebar-button-inline-padding: 16px;
@@ -365,7 +363,7 @@
     min-width: 160px !important;
 }
 
-/* .tab-throbber[busy][progress],
+.tab-throbber[busy][progress],
 .tab-throbber[busy]:not([progress]) {
     display: block !important;
     padding: 0 !important;
@@ -373,15 +371,15 @@
     background-position: center !important;
     background-size: 16px !important;
     transform-origin: 50% 50% !important;
-} */
+}
 
-/* .tab-throbber[busy]:not([progress]) {
+.tab-throbber[busy]:not([progress]) {
     background-image: url("wait.svg") !important;
 }
 
 .tab-throbber[busy][progress] {
     background-image: url("active.svg") !important;
-} */
+}
 
 .tab-loading-burst {
     margin-top: -5px !important;
@@ -396,19 +394,23 @@
 }
 
 .tab-close-button {
-    padding: 4px !important;
-    height: 18px !important;
-    width: 18px !important;
+    padding: 3px !important;
+    height: 17px !important;
+    width: 17px !important;
     margin-inline-end: -2px !important;
     border-radius: 2px !important;
 }
 
-#tabbrowser-tabs[closebuttons="activetab"]
+.tabs-close-button:not([selected="true"]) {
+    display: none;
+}
+
+#tabbrowser-tabs
     > #tabbrowser-arrowscrollbox
-    > .tabbrowser-tab:hover
+    > .tabbrowser-tab:not([selected="true"]):hover
     > .tab-stack
     > .tab-content
-    > .tab-close-button:not([selected="true"], [pinned="true"]) {
+    > .tab-close-button:not([pinned="true"], [selected="true"]) {
     display: inline !important;
 }
 
@@ -710,7 +712,6 @@ tooltip {
 }
 
 .tabbrowser-tab:not([pinned]) {
-    transition: min-width 160ms ease, max-width 160ms ease !important;
     border-inline-start: 1px solid transparent !important;
     border-image: 0 1
         linear-gradient(
@@ -735,4 +736,8 @@ tooltip {
     + .tabbrowser-tab,
 #tabbrowser-tabs:not([movingtab]) .tabbrowser-tab[selected] + .tabbrowser-tab {
     border-image: none !important;
+}
+
+#browser * {
+    background-color: transparent !important;
 }
