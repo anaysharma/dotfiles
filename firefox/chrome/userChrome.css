@@ -202,8 +202,8 @@
 
 #tabbrowser-tabs:not([noshadowfortests])
     .tab-background:is([selected="true"], [multiselected="true"]) {
-    box-shadow: 0 1px 5px -1px #0006 !important;
-    background-color: #f4f4f4b4 !important;
+    box-shadow: 0 1px 5px -1px #0005 !important;
+    background-color: #f8f8f8b0 !important;
     border-top: 1px solid #fff !important;
 }
 
@@ -354,12 +354,12 @@
 }
 
 .tabbrowser-tab[fadein]:not([selected]):not([pinned]) {
-    max-width: 120px !important;
-    min-width: 30px !important;
+    max-width: 130px !important;
+    min-width: 100px !important;
 }
 
 .tabbrowser-tab[selected][fadein]:not([pinned]) {
-    max-width: 200px !important;
+    max-width: 220px !important;
     min-width: 160px !important;
 }
 
@@ -394,14 +394,14 @@
 }
 
 .tab-close-button {
-    padding: 3px !important;
-    height: 17px !important;
-    width: 17px !important;
+    padding: 4px !important;
+    height: 18px !important;
+    width: 18px !important;
     margin-inline-end: -2px !important;
     border-radius: 2px !important;
 }
 
-.tabs-close-button:not([selected="true"]) {
+.tab-close-button:not([selected="true"]) {
     display: none;
 }
 

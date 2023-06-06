@@ -1,0 +1,45 @@
+<svg width="24" height="24" stroke="#000" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .spinner_V8m1 {
+      transform-origin: center;
+      animation: spinner_zKoa 1s linear infinite
+    }
+
+    .spinner_V8m1 circle {
+      stroke-linecap: round;
+      animation: spinner_YpZS 2s ease-in-out infinite
+    }
+
+    @keyframes spinner_zKoa {
+      100% {
+        transform: rotate(360deg)
+      }
+    }
+
+    @keyframes spinner_YpZS {
+      0% {
+        stroke-dasharray: 10 80;
+        stroke-dashoffset: 10
+      }
+
+      60% {
+        stroke-dasharray: 40 80;
+        stroke-dashoffset: -20
+      }
+
+      <!-- 66% {
+        stroke-dasharray: 100 10;
+        stroke-dashoffset: -50
+      } -->
+
+      100% {
+        stroke-dasharray: 10 80;
+        stroke-dashoffset: -62
+      }
+    }
+  </style>
+  <circle  cx="12" cy="12" r="10" fill="none" stroke="#888" stroke-width="3" opacity=".4"></circle>
+  <g class="spinner_V8m1">
+    <circle cx="12" cy="12" r="10" fill="none" stroke="#08f" stroke-width="3"></circle>
+  </g>
+</svg>

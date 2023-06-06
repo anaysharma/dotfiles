@@ -1,0 +1,24 @@
+<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .spinner {
+      stroke-dasharray: 20 150;
+      stroke-dashoffset: 0;
+      stroke-linecap: round;
+    }
+
+    g {
+      transform-origin: center;
+      animation: spinner_AtaB 2s infinite linear;
+    }
+
+    @keyframes spinner_AtaB {
+      100% {
+        transform: rotate(-360deg)
+      }
+    }
+  </style>
+  <circle  cx="12" cy="12" r="10" fill="none" stroke="#888" stroke-width="3" opacity=".4"></circle>
+  <g>
+    <circle class="spinner" cx="12" cy="12" r="10" fill="none" stroke="#888" stroke-width="3"></circle>
+  </g>
+</svg>
