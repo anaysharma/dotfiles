@@ -8,9 +8,18 @@
 	}
 }
 
+@-moz-document url-prefix(about:blank) {*{ background-color:transparent; }}
+
+#main-window { background: transparent !important; }
+
 @-moz-document url('about:home'), url('about:newtab') {
+	
+	*:not(body) {
+		transition: width 300ms;
+	}
+	
 	body {
-		background-color: #eee !important;
+		background-color: #f8f8f8 !important;
 	}
 
 	div.outer-wrapper {
@@ -18,9 +27,17 @@
 		display: grid !important;
 		place-items: center !important;
 	}
-
+  
+/* 	@media screen and (min-width: 1200px) {
 	.non-collapsible-section {
 		padding-inline: 10vw !important;
+	}
+		
+	} */
+	
+	.non-collapsible-section {
+		max-width: 800px !important;
+		margin-inline: auto;
 	}
 
 	.search-wrapper {
@@ -42,7 +59,11 @@
 		background-size: 100px !important;
 		width: 100px !important;
 		height: 50px !important;
-		opacity: 0.7 !important;
+		opacity: 0.8 !important;
+	}
+	
+	.fake-caret {
+		inset-inline: 20px !important;
 	}
 
 	.fake-editable,
@@ -54,10 +75,8 @@
 	.search-inner-wrapper {
 		border-radius: 5px;
 		width: 100% !important;
-		background-color: #f4f4f4;
-		border-top: 1px solid #fff;
-		border-bottom: 1px solid #ddd;
-		box-shadow: 0 5px 20px -5px #0002 !important;
+		background-color: #fff;
+		border: 1px solid #eee;
 	}
 
 	.fake-editable,
@@ -75,25 +94,28 @@
 
 	@media (prefers-color-scheme: dark) {
 		body {
-			background-color: #1a1a1a !important;
+			background-color: #111 !important;
 		}
 
 		.search-inner-wrapper,
 		.fake-editable,
 		.search-handoff-button {
-			background: #222 !important;
+			background: #181818 !important;
 		}
 
 		.search-handoff-button {
-			background: #222 !important;
+			background: #181818 !important;
 		}
 
 		.search-inner-wrapper {
 			border-radius: 5px;
 			width: 100% !important;
-			border-top-color: #fff1;
-			border-bottom-color: #0001;
-			box-shadow: 0 5px 20px -5px #0008 !important;
+			border: 1px solid #222;
 		}
 	}
 }
+/* 
+:root {
+	--in-content-primary-button-text-color: transparent !important;
+	--in-content-primary-button-background: transparent !important;
+} */

@@ -17,8 +17,8 @@
       }
     }
   </style>
-  <circle  cx="12" cy="12" r="10" fill="none" stroke="#888" stroke-width="3" opacity=".4"></circle>
+  <circle  cx="12" cy="12" r="10" fill="none" stroke="#888" stroke-width="3.6" opacity=".4"></circle>
   <g>
-    <circle class="spinner" cx="12" cy="12" r="10" fill="none" stroke="#888" stroke-width="3"></circle>
+    <circle class="spinner" cx="12" cy="12" r="10" fill="none" stroke="#888" stroke-width="3.6"></circle>
   </g>
 </svg>

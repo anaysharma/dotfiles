@@ -1306,12 +1306,12 @@ user_pref("toolkit.coverage.opt-out", true);
 
 // PREF: Health Reports
 // [SETTING] Privacy & Security>Firefox Data Collection & Use>Allow Firefox to send technical data.
-user_pref("datareporting.healthreport.uploadEnabled", false);
+// user_pref("datareporting.healthreport.uploadEnabled", false);
 
 // PREF: new data submission, master kill switch
 // If disabled, no policy is shown or upload takes place, ever
 // [1] https://bugzilla.mozilla.org/1195552
-user_pref("datareporting.policy.dataSubmissionEnabled", false);
+// user_pref("datareporting.policy.dataSubmissionEnabled", false);
 
 // PREF: Studies
 // [SETTING] Privacy & Security>Firefox Data Collection & Use>Allow Firefox to install and run studies
@@ -1323,11 +1323,11 @@ user_pref("app.shield.optoutstudies.enabled", false);
 user_pref("browser.discovery.enabled", false);
 
 // PREF: disable crash reports
-user_pref("breakpad.reportURL", "");
-user_pref("browser.tabs.crashReporting.sendReport", false);
+// user_pref("breakpad.reportURL", "");
+// user_pref("browser.tabs.crashReporting.sendReport", false);
     //user_pref("browser.crashReports.unsubmittedCheck.enabled", false); // DEFAULT
 // PREF: enforce no submission of backlogged crash reports
-user_pref("browser.crashReports.unsubmittedCheck.autoSubmit2", false);
+// user_pref("browser.crashReports.unsubmittedCheck.autoSubmit2", false);
 
 // PREF: Captive Portal detection
 // [WARNING] Do NOT use for mobile devices. May NOT be able to use Firefox on public wifi (hotels, coffee shops, etc).
@@ -1344,10 +1344,10 @@ user_pref("network.connectivity-service.enabled", false);
 // PREF: software that continually reports what default browser you are using
 // [WARNING] Breaks "Make Default..." button in Preferences to set Firefox as the default browser [1].
 // [1] https://github.com/yokoffing/Betterfox/issues/166
-user_pref("default-browser-agent.enabled", false);
+// user_pref("default-browser-agent.enabled", true);
 
 // PREF: "report extensions for abuse"
-//user_pref("extensions.abuseReport.enabled", false);
+user_pref("extensions.abuseReport.enabled", false);
 
 // PREF: Normandy/Shield [extensions tracking]
 // Shield is an telemetry system (including Heartbeat) that can also push and test "recipes"

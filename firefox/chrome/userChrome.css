@@ -129,6 +129,7 @@
         currentColor 30%,
         transparent
     ) !important;
+/*     --urlbar-icon-padding: 10px !important; */
 }
 
 :root #navigator-toolbox {
@@ -251,7 +252,7 @@
     background-color: var(--identity-icon-color) !important;
     height: 1px !important;
     border-radius: 1px !important;
-    margin: var(--tab-border-radius) var(--tab-border-radius) 0px !important;
+    margin: 0px var(--tab-border-radius) 0px !important;
     box-shadow: 0px 3px 9px 0px var(--identity-icon-color) !important;
 }
 
@@ -738,6 +739,6 @@ tooltip {
     border-image: none !important;
 }
 
-#browser * {
+/* #browser * {
     background-color: transparent !important;
-}
+} */
