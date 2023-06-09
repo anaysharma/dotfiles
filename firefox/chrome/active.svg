@@ -7,7 +7,7 @@
 
     .spinner_V8m1 circle {
       stroke-linecap: round;
-      animation: spinner_YpZS 2s ease-in-out infinite
+      animation: spinner_YpZS 2s linear infinite
     }
 
     @keyframes spinner_zKoa {
@@ -24,7 +24,7 @@
 
       60% {
         stroke-dasharray: 40 80;
-        stroke-dashoffset: -20
+        stroke-dashoffset: -10
       }
 
       <!-- 66% {
@@ -38,8 +38,8 @@
       }
     }
   </style>
-  <circle  cx="12" cy="12" r="10" fill="none" stroke="#888" stroke-width="3.6" opacity=".4"></circle>
+  <circle  cx="12" cy="12" r="10" fill="none" stroke="#888" stroke-width="3.4" opacity=".4"></circle>
   <g class="spinner_V8m1">
-    <circle cx="12" cy="12" r="10" fill="none" stroke="#08f" stroke-width="3.6"></circle>
+    <circle cx="12" cy="12" r="10" fill="none" stroke="#08f" stroke-width="3.4"></circle>
   </g>
 </svg>

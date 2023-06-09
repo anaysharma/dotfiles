@@ -130,6 +130,7 @@
         transparent
     ) !important;
 /*     --urlbar-icon-padding: 10px !important; */
+    --autocomplete-popup-highlight-background: #ddd !important;
 }
 
 :root #navigator-toolbox {
@@ -151,7 +152,7 @@
     --tab-max-width: 200px;
     --tab-min-width: 140px;
     --bookmarks-height: 32px;
-    --bookmarks-margin: 1px 2px 4px 2px;
+    --bookmarks-margin: 1.4px 2px 4px 2px;
 }
 
 :root[uidensity="touch"] #navigator-toolbox {
@@ -262,10 +263,14 @@
     margin-top: 5px !important;
 }
 
+#urlbar {
+    --urlbar-height: 28px !important;
+}
+
 #urlbar:not([focused="true"]) > #urlbar-input-container {
     box-shadow: 0 0 10px -3px #0002;
     background-color: #ffffff !important;
-    border: 1px solid #dadada !important;
+    border: 1px solid #e8e8e8 !important;
 }
 
 #urlbar:not([focused="true"]) > #urlbar-input-container:hover {
@@ -279,13 +284,26 @@
     border: 1px solid #8883 !important;
 }
 
-.urlbarView-row:hover > .urlbarView-row-inner {
-    background-color: #00000012 !important;
+.urlbarView-row:hover  {
+    background-color: #f4f4f4 !important;
+}
+
+.urlbarView-row[selected] {
+    background: #eee !important;
+}
+
+#urlbar-search-mode-indicator {
+    background-color: #f0f0f0 !important;;
 }
 
 #nav-bar[customizing],
 #PersonalToolbar[customizing] {
     transform: none !important;
+}
+
+#nav-bar,
+#PersonalToolbar {
+    background-color: #fafafa !important;
 }
 
 #navigator-toolbox > #PersonalToolbar {
@@ -300,7 +318,7 @@
 #PlacesToolbarItems > .bookmark-item {
     min-height: calc(var(--uc-bm-height) - 4px);
     padding-block: 0px !important;
-    background-color: rgba(170, 170, 180, 0.1);
+    background-color: rgba(170, 170, 170, 0.16);
     margin: var(--bookmarks-margin) !important;
 }
 
@@ -635,7 +653,7 @@ tooltip {
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --autocomplete-popup-highlight-background: #333 !important;
+        --autocomplete-popup-highlight-background: #444 !important;
         --arrowpanel-background: #303030 !important;
         --panel-background: #303030 !important;
     }
@@ -644,29 +662,37 @@ tooltip {
     menuitem:hover,
     .subviewbutton:hover,
     .subviewbutton-iconic:hover {
-        background-color: rgba(255, 255, 255, 0.1) !important;
+        background-color: rgba(255, 255, 255, 0.08) !important;
     }
 
     #urlbar:is([focused="true"]) > #urlbar-background {
         background-color: #303030 !important;
     }
 
-    #urlbar:is([open="true"]) > #urlbar-background {
-        background-color: #262626 !important;
+    #urlbar > #urlbar-background {
+        background-color: #333 !important;
     }
 
     #urlbar:not([focused="true"]) > #urlbar-input-container {
         box-shadow: 0 0 10px -3px #000;
         background-color: #333 !important;
-        border: 1px solid #444 !important;
+        border: 1px solid #3c3c3c !important;
     }
 
     #urlbar:not([focused="true"]) > #urlbar-input-container:hover {
         outline: 2px solid #444 !important;
     }
 
-    .urlbarView-row:hover > .urlbarView-row-inner {
-        background-color: #333 !important;
+    .urlbarView-row:hover {
+        background-color: #444 !important;
+    }
+    
+    .urlbarView-row[selected] {
+        background: #464646 !important;
+    }
+    
+    #urlbar-search-mode-indicator {
+        background-color: #444 !important;;
     }
 
     #tabbrowser-tabs:not([noshadowfortests])
@@ -709,6 +735,10 @@ tooltip {
 
     #ContentSelectDropdownPopup * {
         color: #eff8ffe0 !important;
+    }
+    
+    #PlacesToolbarItems > .bookmark-item {
+        background-color: rgba(170, 170, 170, 0.1);
     }
 }
 

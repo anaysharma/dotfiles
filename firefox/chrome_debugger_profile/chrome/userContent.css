@@ -1,0 +1,10 @@
+@namespace url(http://www.w3.org/1999/xhtml);
+
+@-moz-document url-prefix(chrome://devtools/content/)
+{
+	:root {
+		--monospace-font-family: 'Jetbrains mono', monospace !important;
+		--theme-code-font-size: 12px !important;
+	}
+}
+.chrome-debug-toolbar { display: none !important; } 
