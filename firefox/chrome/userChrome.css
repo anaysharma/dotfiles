@@ -130,7 +130,6 @@
         transparent
     ) !important;
 /*     --urlbar-icon-padding: 10px !important; */
-    --autocomplete-popup-highlight-background: #ddd !important;
 }
 
 :root #navigator-toolbox {
@@ -274,7 +273,8 @@
 }
 
 #urlbar:not([focused="true"]) > #urlbar-input-container:hover {
-    outline: 2px solid #ccc !important;
+    outline: 1px solid #bbb !important;
+    outline-offset: -1px;
 }
 
 #urlbar:is([open="true"]) > #urlbar-background {
@@ -284,16 +284,32 @@
     border: 1px solid #8883 !important;
 }
 
+.search-panel-one-offs > button {
+    background-color: transparent !important;
+}
+
+.search-panel-one-offs > button:hover,
 .urlbarView-row:hover  {
     background-color: #f4f4f4 !important;
 }
 
+.search-panel-one-offs > button[selected="true"],
 .urlbarView-row[selected] {
     background: #eee !important;
 }
 
+
 #urlbar-search-mode-indicator {
     background-color: #f0f0f0 !important;;
+}
+    
+#identity-box[class="chromeUI"] > #identity-icon-box {
+    background-color: #eee !important;
+/*     margin: 1px !important; */
+}
+
+#urlbar .search-one-offs:not([hidden]) {
+    padding-block: 4px 5px !important;
 }
 
 #nav-bar[customizing],
@@ -313,13 +329,16 @@
 
 :root[sessionrestored]:not([customizing]) #navigator-toolbox {
     margin-bottom: calc(0px - var(--uc-bm-height) + var(--uc-navbar-height));
+/*     margin-bottom: -68px */
 }
 
 #PlacesToolbarItems > .bookmark-item {
-    min-height: calc(var(--uc-bm-height) - 4px);
-    padding-block: 0px !important;
-    background-color: rgba(170, 170, 170, 0.16);
+    background-color: #eeec;
     margin: var(--bookmarks-margin) !important;
+}
+
+#PlacesToolbarItems {
+    min-height: calc(var(--uc-bm-height) + 1px);
 }
 
 #OtherBookmarks,
@@ -362,6 +381,10 @@
 #navigator-toolbox:hover > .browser-toolbar {
     transition-delay: 0ms !important;
     transform: rotateX(0);
+}
+
+#reload-button > image:nth-child(1) {
+    padding: 6px !important;
 }
 
 #navigator-toolbox > div {
@@ -680,7 +703,7 @@ tooltip {
     }
 
     #urlbar:not([focused="true"]) > #urlbar-input-container:hover {
-        outline: 2px solid #444 !important;
+        outline: 1px solid #666 !important;
     }
 
     .urlbarView-row:hover {
@@ -697,10 +720,10 @@ tooltip {
 
     #tabbrowser-tabs:not([noshadowfortests])
         .tab-background:is([selected="true"], [multiselected="true"]) {
-        box-shadow: 0 1px 5px -1px rgba(0, 0, 0, 0.5) !important;
+        box-shadow: 0 1px 5px -1px rgba(0, 0, 0, 0.6) !important;
         background-image: none !important;
-        background-color: #4449 !important;
-        border-top: 1px solid #444b !important;
+        background-color: #4448 !important;
+        border-top: 1px solid #444a !important;
         border-bottom: 1px solid #0005 !important;
     }
 
@@ -739,6 +762,10 @@ tooltip {
     
     #PlacesToolbarItems > .bookmark-item {
         background-color: rgba(170, 170, 170, 0.1);
+    }
+    
+    #identity-box[class="chromeUI"] > #identity-icon-box {
+        background-color: #222 !important;
     }
 }
 
