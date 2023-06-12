@@ -3,23 +3,28 @@
 @-moz-document url-prefix(chrome://devtools/content/)
 {
 	:root {
-		--monospace-font-family: 'Jetbrains mono', monospace !important;
+		--monospace-font-family: "Jetbrains mono", monospace !important;
 		--theme-code-font-size: 12px !important;
 	}
 }
 
-@-moz-document url-prefix(about:blank) {*{ background-color:transparent; }}
+@-moz-document url-prefix(about:blank) {
+	* {
+		background-color: transparent;
+	}
+}
 
-#main-window { background: transparent !important; }
+#main-window {
+	background: transparent !important;
+}
 
 @-moz-document url('about:home'), url('about:newtab') {
-	
 	*:not(body) {
 		transition: width 300ms;
 	}
-	
+
 	body {
-		background-color: #f4f4f4 !important;
+		background-color: #f8f8f8 !important;
 	}
 
 	div.outer-wrapper {
@@ -27,14 +32,14 @@
 		display: grid !important;
 		place-items: center !important;
 	}
-  
-/* 	@media screen and (min-width: 1200px) {
+
+	/* 	@media screen and (min-width: 1200px) {
 	.non-collapsible-section {
 		padding-inline: 10vw !important;
 	}
 		
 	} */
-	
+
 	.non-collapsible-section {
 		max-width: 800px !important;
 		margin-inline: auto;
@@ -44,24 +49,30 @@
 		display: grid;
 	}
 
+	.search-wrapper.fake-focus .search-handoff-button {
+		border-width: 2px !important;
+	}
+
 	.logo-and-wordmark {
 		justify-content: start !important;
-		margin-bottom: 20px !important;
+		margin-block: 20px !important;
 	}
 
 	.logo {
-		background-size: 50px !important;
-		height: 50px !important;
-		width: 50px !important;
+		filter: drop-shadow(-4px 4px 8px #f005) drop-shadow(4px -4px 8px #ff05);
+		background-size: 40px !important;
+		height: 45px !important;
+		width: 45px !important;
 	}
 
 	.wordmark {
-		background-size: 100px !important;
-		width: 100px !important;
-		height: 50px !important;
+		filter: drop-shadow(0 3px 10px #4088);
+		background-size: 90px !important;
+		width: 90px !important;
+		height: 45px !important;
 		opacity: 0.8 !important;
 	}
-	
+
 	.fake-caret {
 		inset-inline: 20px !important;
 	}
@@ -76,6 +87,7 @@
 		border-radius: 5px;
 		width: 100% !important;
 		background-color: #fff;
+		box-shadow: 0 10px 30px -10px #0001;
 		border: 1px solid #e8e8e8;
 	}
 
@@ -97,20 +109,17 @@
 			background-color: #111 !important;
 		}
 
-		.search-inner-wrapper,
-		.fake-editable,
-		.search-handoff-button {
-			background: #1a1a1a !important;
-		}
-
-		.search-handoff-button {
-			background: #1c1c1c !important;
-		}
-
 		.search-inner-wrapper {
-			border-radius: 5px;
-			width: 100% !important;
-			border: 1px solid #282828;
+			background: #181818 !important;
+			border: 1px solid #262626;
+			box-shadow: 0 10px 30px -10px #0008;
+		}
+		.logo {
+			filter: drop-shadow(-4px 4px 8px #f008)
+				drop-shadow(4px -4px 8px #ff06);
+		}
+		.wordmark {
+			filter: drop-shadow(0 3px 10px #a8f);
 		}
 	}
 }

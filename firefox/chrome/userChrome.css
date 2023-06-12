@@ -121,12 +121,12 @@
     --urlbar-box-bgcolor: var(--button-bgcolor) !important;
     --button-hover-bgcolor: color-mix(
         in srgb,
-        currentColor 17%,
+        currentColor 10%,
         transparent
     ) !important;
     --button-active-bgcolor: color-mix(
         in srgb,
-        currentColor 30%,
+        currentColor 20%,
         transparent
     ) !important;
 /*     --urlbar-icon-padding: 10px !important; */
@@ -185,12 +185,12 @@
     ) {
     --button-hover-bgcolor: color-mix(
         in srgb,
-        currentColor 10%,
+        #888 15%,
         transparent
     ) !important;
     --button-active-bgcolor: color-mix(
         in srgb,
-        currentColor 20%,
+        #888 20%,
         transparent
     ) !important;
 }
@@ -267,13 +267,13 @@
 }
 
 #urlbar:not([focused="true"]) > #urlbar-input-container {
-    box-shadow: 0 0 10px -3px #0002;
+    box-shadow: 0 0 8px -4px #0003;
     background-color: #ffffff !important;
-    border: 1px solid #e8e8e8 !important;
+    border: 1px solid #eaeaea !important;
 }
 
 #urlbar:not([focused="true"]) > #urlbar-input-container:hover {
-    outline: 1px solid #bbb !important;
+    outline: 2px solid #ddd !important;
     outline-offset: -1px;
 }
 
@@ -327,7 +327,7 @@
     position: relative;
 }
 
-:root[sessionrestored]:not([customizing]) #navigator-toolbox {
+:root:not([customizing]) #navigator-toolbox {
     margin-bottom: calc(0px - var(--uc-bm-height) + var(--uc-navbar-height));
 /*     margin-bottom: -68px */
 }
@@ -373,12 +373,11 @@
     pointer-events: auto;
 }
 
-#navigator-toolbox:focus-within > .browser-toolbar {
-    transition-delay: 0ms !important;
-    transform: rotateX(0);
-}
 
-#navigator-toolbox:hover > .browser-toolbar {
+#navigator-toolbox:hover > .browser-toolbar,
+#navigator-toolbox:focus-within > .browser-toolbar,
+#navigator-toolbox > .browser-toolbar:has([open="true"]),
+#navigator-toolbox > .browser-toolbar:has([open="true"]) + #PersonalToolbar {
     transition-delay: 0ms !important;
     transform: rotateX(0);
 }
@@ -570,7 +569,7 @@ menu:hover,
 menuitem:hover,
 .subviewbutton:hover,
 .subviewbutton-iconic:hover {
-    background-color: rgba(0, 0, 0, 0.06) !important;
+    background-color: #eee !important;
 }
 
 .subviewbutton > * > *,
@@ -698,12 +697,12 @@ tooltip {
 
     #urlbar:not([focused="true"]) > #urlbar-input-container {
         box-shadow: 0 0 10px -3px #000;
-        background-color: #333 !important;
+        background-color: #303030 !important;
         border: 1px solid #3c3c3c !important;
     }
 
     #urlbar:not([focused="true"]) > #urlbar-input-container:hover {
-        outline: 1px solid #666 !important;
+        outline: 2px solid #505050 !important;
     }
 
     .urlbarView-row:hover {
@@ -761,7 +760,11 @@ tooltip {
     }
     
     #PlacesToolbarItems > .bookmark-item {
-        background-color: rgba(170, 170, 170, 0.1);
+        background-color: #3339 !important;
+    }
+    
+    #PlacesToolbarItems > .bookmark-item:hover {
+        background-color: #333 !important;
     }
     
     #identity-box[class="chromeUI"] > #identity-icon-box {
