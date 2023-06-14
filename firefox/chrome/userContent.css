@@ -50,12 +50,14 @@
 	}
 
 	.search-wrapper.fake-focus .search-handoff-button {
-		border-width: 2px !important;
+		border-width: 1px !important;
+		border-color: #08f !important;
 	}
 
 	.logo-and-wordmark {
 		justify-content: start !important;
-		margin-block: 20px !important;
+		margin-block-start: 30px !important;
+		margin-block-end: 20px !important;
 	}
 
 	.logo {
@@ -115,16 +117,10 @@
 			box-shadow: 0 10px 30px -10px #0008;
 		}
 		.logo {
-			filter: drop-shadow(-4px 4px 8px #f008)
-				drop-shadow(4px -4px 8px #ff06);
+			filter: drop-shadow(-4px 4px 8px #f008) drop-shadow(4px -4px 8px #ff06);
 		}
 		.wordmark {
 			filter: drop-shadow(0 3px 10px #a8f);
 		}
 	}
 }
-/* 
-:root {
-	--in-content-primary-button-text-color: transparent !important;
-	--in-content-primary-button-background: transparent !important;
-} */

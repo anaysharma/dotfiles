@@ -6,19 +6,12 @@
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 @media (-moz-windows-accent-color-in-titlebar: 0) {
-    #main-window[tabsintitlebar]:is(
-            :not(:-moz-lwtheme),
-            [lwt-default-theme-in-dark-mode]
-        ) {
+    #main-window[tabsintitlebar]:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode]) {
         appearance: -moz-win-borderless-glass !important;
         background-color: transparent !important;
     }
 
-    :root[tabsintitlebar]:is(
-            :not(:-moz-lwtheme),
-            [lwt-default-theme-in-dark-mode]
-        )
-        #navigator-toolbox {
+    :root[tabsintitlebar]:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode]) #navigator-toolbox {
         background-color: transparent !important;
     }
 
@@ -57,54 +50,32 @@
         }
     }
 
-    :root[tabsintitlebar]:is(
-            :not(:-moz-lwtheme),
-            [lwt-default-theme-in-dark-mode]
-        ):not([sizemode="fullscreen"])
-        .titlebar-button:not(
-            .titlebar-close:hover,
-            .titlebar-close:hover:active
-        )
+    :root[tabsintitlebar]:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode]):not([sizemode="fullscreen"])
+        .titlebar-button:not(.titlebar-close:hover, .titlebar-close:hover:active)
         .toolbarbutton-icon {
         opacity: 0 !important;
     }
 
-    :root[tabsintitlebar]:is(
-            :not(:-moz-lwtheme),
-            [lwt-default-theme-in-dark-mode]
-        ):not([sizemode="fullscreen"])
+    :root[tabsintitlebar]:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode]):not([sizemode="fullscreen"])
         .titlebar-button:not(.titlebar-close) {
         margin-inline-end: 1px !important;
     }
 
-    :root[sizemode="normal"][tabsintitlebar]:is(
-            :not(:-moz-lwtheme),
-            [lwt-default-theme-in-dark-mode]
-        )
+    :root[sizemode="normal"][tabsintitlebar]:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode])
         .titlebar-button {
         padding-inline: var(--titlebar-button-inline-padding) !important;
     }
 
-    :root[sizemode="normal"][tabsintitlebar]:is(
-            :not(:-moz-lwtheme),
-            [lwt-default-theme-in-dark-mode]
-        )
-        .titlebar-close {
+    :root[sizemode="normal"][tabsintitlebar]:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode]) .titlebar-close {
         padding-inline: var(--titlebar-close-inline-padding) !important;
     }
 
-    :root[sizemode="maximized"][tabsintitlebar]:is(
-            :not(:-moz-lwtheme),
-            [lwt-default-theme-in-dark-mode]
-        )
+    :root[sizemode="maximized"][tabsintitlebar]:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode])
         .titlebar-button {
         padding-inline: var(--titlebar-button-inline-padding) !important;
     }
 
-    :root[sizemode="maximized"][tabsintitlebar]:is(
-            :not(:-moz-lwtheme),
-            [lwt-default-theme-in-dark-mode]
-        )
+    :root[sizemode="maximized"][tabsintitlebar]:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode])
         .titlebar-close {
         margin-inline-end: 2px !important;
         padding-inline: var(--titlebar-close-inline-padding) !important;
@@ -119,17 +90,9 @@
     --menu-corner-rounding: 4.5px;
     --animation-speed: 0.4s;
     --urlbar-box-bgcolor: var(--button-bgcolor) !important;
-    --button-hover-bgcolor: color-mix(
-        in srgb,
-        currentColor 10%,
-        transparent
-    ) !important;
-    --button-active-bgcolor: color-mix(
-        in srgb,
-        currentColor 20%,
-        transparent
-    ) !important;
-/*     --urlbar-icon-padding: 10px !important; */
+    --button-hover-bgcolor: color-mix(in srgb, currentColor 10%, transparent) !important;
+    --button-active-bgcolor: color-mix(in srgb, currentColor 20%, transparent) !important;
+    /*     --urlbar-icon-padding: 10px !important; */
 }
 
 :root #navigator-toolbox {
@@ -183,16 +146,8 @@
         [style*="--lwt-accent-color: rgb(240, 240, 244); --lwt-text-color: rgba(21, 20, 26);"],
         [style*="--lwt-accent-color: rgb(28, 27, 34); --lwt-text-color: rgba(251, 251, 254);"]
     ) {
-    --button-hover-bgcolor: color-mix(
-        in srgb,
-        #888 15%,
-        transparent
-    ) !important;
-    --button-active-bgcolor: color-mix(
-        in srgb,
-        #888 20%,
-        transparent
-    ) !important;
+    --button-hover-bgcolor: color-mix(in srgb, #888 15%, transparent) !important;
+    --button-active-bgcolor: color-mix(in srgb, #888 20%, transparent) !important;
 }
 
 #navigator-toolbox {
@@ -201,8 +156,7 @@
     --uc-autohide-toolbar-delay: 200ms;
 }
 
-#tabbrowser-tabs:not([noshadowfortests])
-    .tab-background:is([selected="true"], [multiselected="true"]) {
+#tabbrowser-tabs:not([noshadowfortests]) .tab-background:is([selected="true"], [multiselected="true"]) {
     box-shadow: 0 1px 5px -1px #0005 !important;
     background-color: #f8f8f8b0 !important;
     border-top: 1px solid #fff !important;
@@ -289,7 +243,7 @@
 }
 
 .search-panel-one-offs > button:hover,
-.urlbarView-row:hover  {
+.urlbarView-row:hover {
     background-color: #f4f4f4 !important;
 }
 
@@ -298,14 +252,13 @@
     background: #eee !important;
 }
 
-
 #urlbar-search-mode-indicator {
-    background-color: #f0f0f0 !important;;
+    background-color: #f0f0f0 !important;
 }
-    
+
 #identity-box[class="chromeUI"] > #identity-icon-box {
     background-color: #eee !important;
-/*     margin: 1px !important; */
+    /*     margin: 1px !important; */
 }
 
 #urlbar .search-one-offs:not([hidden]) {
@@ -329,7 +282,7 @@
 
 :root:not([customizing]) #navigator-toolbox {
     margin-bottom: calc(0px - var(--uc-bm-height) + var(--uc-navbar-height));
-/*     margin-bottom: -68px */
+    /*     margin-bottom: -68px */
 }
 
 #PlacesToolbarItems > .bookmark-item {
@@ -372,7 +325,6 @@
 #navigator-toolbox > * {
     pointer-events: auto;
 }
-
 
 #navigator-toolbox:hover > .browser-toolbar,
 #navigator-toolbox:focus-within > .browser-toolbar,
@@ -448,10 +400,10 @@
 
 #tabbrowser-tabs
     > #tabbrowser-arrowscrollbox
-    > .tabbrowser-tab:not([selected="true"]):hover
+    > .tabbrowser-tab:hover
     > .tab-stack
     > .tab-content
-    > .tab-close-button:not([pinned="true"], [selected="true"]) {
+    > .tab-close-button:not([pinned="true"]) {
     display: inline !important;
 }
 
@@ -655,9 +607,7 @@ slot:nth-child(1) {
     position: relative !important;
 }
 
-#unified-extensions-view
-    .unified-extensions-item:hover
-    > .unified-extensions-item-menu-button {
+#unified-extensions-view .unified-extensions-item:hover > .unified-extensions-item-menu-button {
     display: inline !important;
     position: absolute !important;
     right: 2px;
@@ -708,17 +658,16 @@ tooltip {
     .urlbarView-row:hover {
         background-color: #444 !important;
     }
-    
+
     .urlbarView-row[selected] {
         background: #464646 !important;
     }
-    
+
     #urlbar-search-mode-indicator {
-        background-color: #444 !important;;
+        background-color: #444 !important;
     }
 
-    #tabbrowser-tabs:not([noshadowfortests])
-        .tab-background:is([selected="true"], [multiselected="true"]) {
+    #tabbrowser-tabs:not([noshadowfortests]) .tab-background:is([selected="true"], [multiselected="true"]) {
         box-shadow: 0 1px 5px -1px rgba(0, 0, 0, 0.6) !important;
         background-image: none !important;
         background-color: #4448 !important;
@@ -758,15 +707,15 @@ tooltip {
     #ContentSelectDropdownPopup * {
         color: #eff8ffe0 !important;
     }
-    
+
     #PlacesToolbarItems > .bookmark-item {
         background-color: #3339 !important;
     }
-    
+
     #PlacesToolbarItems > .bookmark-item:hover {
         background-color: #333 !important;
     }
-    
+
     #identity-box[class="chromeUI"] > #identity-icon-box {
         background-color: #222 !important;
     }
@@ -784,17 +733,12 @@ tooltip {
 }
 
 .tabbrowser-tab:hover,
-#tabbrowser-tabs:not([movingtab])
-    .tabbrowser-tab:hover
-    + .tabbrowser-tab:not([first-visible-unpinned-tab]),
+#tabbrowser-tabs:not([movingtab]) .tabbrowser-tab:hover + .tabbrowser-tab:not([first-visible-unpinned-tab]),
 .tabbrowser-tab:first-child,
 .tabbrowser-tab[selected],
 .tabbrowser-tab[multiselected],
-#tabbrowser-arrowscrollbox[overflowing]
-    > .tabbrowser-tab[first-visible-unpinned-tab],
-#tabbrowser-tabs:not([movingtab])
-    .tabbrowser-tab[multiselected]
-    + .tabbrowser-tab,
+#tabbrowser-arrowscrollbox[overflowing] > .tabbrowser-tab[first-visible-unpinned-tab],
+#tabbrowser-tabs:not([movingtab]) .tabbrowser-tab[multiselected] + .tabbrowser-tab,
 #tabbrowser-tabs:not([movingtab]) .tabbrowser-tab[selected] + .tabbrowser-tab {
     border-image: none !important;
 }
@@ -802,3 +746,27 @@ tooltip {
 /* #browser * {
     background-color: transparent !important;
 } */
+
+@-moz-document url("chrome://browser/content/places/places.xhtml")
+{
+    /*  #downloadsListBox > richlistitem {
+        background-color: orange !important;
+        color: white !important;
+        background-image: none !important;
+        outline: none !important;
+    } */
+
+    #downloadsListBox > richlistitem:hover {
+        background-color: #88889f18 !important;
+    }
+    #downloadsListBox > richlistitem[selected="true"] {
+        background-color: #88a4 !important;
+        border-radius: 0 !important;
+        outline: 0 !important;
+        background-image: none !important;
+    }
+
+    richlistbox {
+        border: none !important;
+    }
+}
